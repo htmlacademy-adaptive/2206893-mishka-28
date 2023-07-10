@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Academy: Мишка</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico"><!-- 32×32 -->
+    <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/favicons/apple.png"><!-- 180×180 -->
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="preload" href="fonts/ptsans.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/ptsansbold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="container">
+        <a class="main-header__logo-link" href="index.html">
+          <picture>
+            <source media="(min-width: 1150px)" srcset="img/svg/logo-header-desktop.svg">
+            <source media="(min-width: 768px)" srcset="img/svg/logo-header-tablet.svg">
+            <img class="main-header__icon" src="img/svg/logo-header-mobile.svg" width="86" height="29" alt="Логотип магазина.">
+          </picture>
+        </a>
+        <!-- Класс main-nav--nojs стоит при отключенном js и при включении js он автоматически удаляется, а класс main-nav--hidden используется для скрытия навигации при активном js -->
+        <nav class="main-nav main-nav--nojs">
+          <ul class="main-nav__list">
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="catalog.html">Каталог товаров</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link active-link" tabindex="-1" href="#">Вязание на заказ</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="#">Поиск по сайту</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="#">Корзина: пока пуста</a>
+            </li>
+          </ul>
+          <button class="main-nav__toggle" type="button">
+            <span class="visually-hidden">Открыть меню</span>
+          </button>
+        </nav>
+        <ul class="secondary-navigation">
+          <li class="secondary-navigation__item">
+            <a class="secondary-navigation__link" href="#">Новые поступления</a>
+          </li>
+          <li class="secondary-navigation__item">
+            <a class="secondary-navigation__link" href="#">Распродажа</a>
+          </li>
+        </ul>
+        <p class="main-header__delivery">Бесплатная доставка по России</p>
+      </div>
+    </header>
+    <main class="main-index">
+      <section class="personal-order">
+        <div class="container">
+          <h1 class="personal-order__title title">Вязание на заказ</h1>
+        </div>
+      </section>
+    </main>
+    <footer class="main-footer">
+      <div class="container">
+        <a class="main-footer__logo-link" href="index.html" aria-label="Логотип магазина."></a>
+        <ul class="main-footer__social-list">
+          <li class="main-footer__social-item">
+            <a class="main-footer__social-link main-footer__social-link--vkontakte" target="_blank" href="https://vk.com/htmlacademy">
+              <span class="visually-hidden">Мы во ВКонтакте</span>
+            </a>
+          </li>
+          <li class="main-footer__social-item">
+            <a class="main-footer__social-link main-footer__social-link--youtube" target="_blank" href="https://www.youtube.com/user/htmlacademyru">
+              <span class="visually-hidden">Мы в Youtube</span>
+            </a>
+          </li>
+          <li class="main-footer__social-item">
+            <a class="main-footer__social-link main-footer__social-link--telegram" target="_blank" href="https://t.me/htmlacademy">
+              <span class="visually-hidden">Мы в Telegram</span>
+            </a>
+          </li>
+        </ul>
+        <a class="main-footer__copyright-link" target="_blank" href="https://htmlacademy.ru/intensive/adaptive" >
+          <span class="main-footer__copyright-text">Разработано</span>
+          <svg class="main-footer__copyright-icon" width="27" height="34" aria-label="в HTML academy">
+            <use xlink:href="img/svg/sprite.svg#html-academy"></use>
+          </svg>
+        </a>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>
