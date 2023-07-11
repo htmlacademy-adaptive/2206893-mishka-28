@@ -79,7 +79,7 @@
           <picture>
             <source media="(min-width: 1150px)" srcset="img/products/top-product-desktop@1x.jpg, img/products/top-product-desktop@2x.jpg 2x">
             <source media="(min-width: 768px)" srcset="img/products/top-product-tablet@1x.jpg, img/products/top-product-tablet@2x.jpg 2x">
-            <img class="top-product__image" src="img/products/top-product-mobile@1x.jpg, img/products/top-product-mobile@2x.jpg 2x" width="260" height="315" alt="Логотип магазина.">
+            <img class="top-product__image" src="img/products/top-product-mobile@1x.jpg" width="260" height="315" alt="Логотип магазина." srcset="img/products/top-product-mobile@2x.jpg 2x">
           </picture>
         </a>
         <p class="top-product__price">Цена: 990 руб.</p>
@@ -205,8 +205,9 @@
                 </label>
               </li>
             </ul>
-            <button class="modal-container__submit-button button" type="submit">Добавить</button>
-          </form>
+          </fieldset>
+          <button class="modal-container__submit-button button" type="submit">Добавить</button>
+        </form>
       </div>
     </div>
     <script src="js/script.js"></script>
