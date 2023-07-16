@@ -1,0 +1,21 @@
+.main-header {
+  position: relative;
+  box-shadow: 0 1px 0 0 $border-color, 0 1px 0 0 $border-color inset;
+  z-index: 1;
+}
+
+.main-header__wrapper {
+  @include flex-style(column, wrap, initial, center);
+  position: relative;
+}
+
+.main-header__logo-link {
+  padding: 22px 22px 28px 22px;
+  display: inline-flex;
+  text-decoration: none;
+  line-height: 0;
+}
+
+.main-header__delivery {
+  display: none;
+}

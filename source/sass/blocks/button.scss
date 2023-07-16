@@ -1,0 +1,17 @@
+.button {
+  display: inline-flex;
+  padding: 14px 25px;
+  justify-content: center;
+  text-align: center;
+  font-family: $main-font;
+  background-color: $base-color;
+  color: $secondary-text-color;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid $secondary-text-color;
+
+  @include pointer;
+}

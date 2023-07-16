@@ -1,0 +1,30 @@
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  list-style: none;
+}
+
+@mixin indent-reset {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin pointer {
+  cursor: pointer;
+}
+
+@mixin flex-style($direction, $wrap, $gap, $align) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  gap: $gap;
+  align-items: $align;
+}
+
+@mixin grid-style($gap, $align) {
+  display: grid;
+  gap: $gap;
+  align-items: $align;
+}

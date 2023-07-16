@@ -1,0 +1,41 @@
+.title {
+  @include indent-reset;
+  color: $base-text-color;
+  font-family: $main-font;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.index-title {
+  @include indent-reset;
+  color: $base-text-color;
+  font-family: $main-font;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  text-decoration: none;
+}
+
+.subtitle {
+  @include indent-reset;
+  color: $base-text-color;
+  font-family: $main-font;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.title-form {
+  @include indent-reset;
+  color: $universal-color;
+  font-family: $main-font;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
+}

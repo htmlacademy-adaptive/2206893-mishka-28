@@ -1,0 +1,63 @@
+.contacts {
+  @include grid-style(initial, initial);
+  padding: 38px $mobile-side-indent 39px $mobile-side-indent;
+}
+
+.contacts__title {
+  margin-bottom: 28px;
+}
+
+.contacts__list {
+  @include list-reset;
+  @include grid-style(30px 35px, initial);
+  grid-template-columns: auto 1fr;
+  margin-bottom: 62px;
+}
+
+.contacts__text {
+  @include indent-reset;
+  font-size: 14px;
+  line-height: 30px;
+  font-weight: 400;
+  color: $secondary-text-color;
+}
+
+.contacts__map {
+  position: relative;
+  margin: 0 -30px 41px -30px;
+  padding: 0;
+  min-width: 320px;
+  width: 100vw;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 145px;
+    left: calc(50% + 10px);
+    width: 67px;
+    height: 100px;
+    background-image: url("../../img/svg/sprite.svg#map-pin");
+    background-repeat: no-repeat;
+    background-size: 67px 100px;
+    transform: translateX(-50%);
+  }
+}
+
+.contacts__google-map {
+  display: none;
+  border: none;
+  width: 100%;
+}
+
+.contacts__map-image {
+  position: relative;
+  width: 100vw;
+  min-width: 320px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contacts__link {
+  margin: 0 auto;
+  width: 260px;
+}

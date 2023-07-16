@@ -1,0 +1,105 @@
+.main-nav {
+  @media (max-width: ($tablet-width - 0.02)) {
+    &--hidden .main-nav__list {
+      display: none;
+    }
+  }
+
+  &--nojs {
+    .main-nav__toggle {
+      display: none;
+    }
+
+    .main-nav__list {
+      @media (max-width: ($tablet-width - 0.02)) {
+        position: relative;
+        width: 100vw;
+        min-width: 320px;
+        top: 0;
+      }
+    }
+  }
+
+  &--hidden .main-nav__toggle {
+    mask-image: url("../../img/svg/sprite.svg#icon-menu");
+    width: 20px;
+    height: 14px;
+    top: 32px;
+    right: 31px;
+  }
+}
+
+.main-nav__toggle {
+  position: absolute;
+  padding: 0;
+  top: 29px;
+  right: 30px;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: $base-text-color;
+  mask-image: url("../../img/svg/sprite.svg#icon-menu-close");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  z-index: 3;
+
+  @include pointer;
+}
+
+.main-nav__list {
+  @include list-reset;
+  @include flex-style(column, wrap, initial, initial);
+  background-color: $base-color;
+  width: 100%;
+
+  @media (max-width: ($tablet-width - 0.02)) {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+}
+
+.main-nav__item {
+  display: inline-flex;
+  box-shadow: 0 1px 0 0 $border-color, 0 1px 0 0 $border-color inset;
+}
+
+.main-nav__link {
+  position: relative;
+  display: inline-flex;
+  margin: 0 auto;
+  padding: 28px 50px 27px 76px;
+  width: 320px;
+  font-family: $main-font;
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 700;
+  color: $base-text-color;
+  text-decoration: none;
+
+  &--search::before,
+  &--cart::before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    opacity: 0.2;
+    background-color: $base-text-color;
+  }
+
+  &--search::before {
+    top: 32px;
+    left: 32px;
+    width: 18px;
+    mask-image: url("../../img/svg/sprite.svg#search");
+    mask-size: 18px 18px;
+  }
+
+  &--cart::before {
+    top: 31px;
+    left: 30px;
+    width: 21px;
+    mask-image: url("../../img/svg/sprite.svg#cart");
+    mask-size: 21px 18px;
+  }
+}

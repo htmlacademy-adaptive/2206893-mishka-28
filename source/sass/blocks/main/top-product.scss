@@ -1,0 +1,85 @@
+.top-product {
+  @include grid-style(initial, initial);
+  padding: 31px $mobile-side-indent 42px $mobile-side-indent;
+  background-image: url("../../img/svg/zigzag-line-mobile.svg");
+  background-repeat: repeat-x;
+  background-position: center bottom;
+  background-size: 320px 6px;
+}
+
+.top-product__categoty {
+  position: relative;
+  margin-bottom: 41px;
+
+  &::before {
+    content: "Товар недели";
+    position: absolute;
+    top: calc(100% + 3px);
+    left: 0;
+    width: auto;
+    height: auto;
+    font-family: $main-font;
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: 700;
+    color: $universal-color;
+    text-transform: uppercase;
+  }
+}
+
+.top-product__text-wrapper {
+  @include flex-style(column, initial, initial, initial);
+  margin-bottom: 41px;
+}
+
+.top-product__about {
+  @include indent-reset;
+  margin-bottom: 28px;
+}
+
+.top-product__info {
+  @include list-reset;
+  @include grid-style(20px 30px, initial);
+  grid-template-columns: auto 1fr;
+}
+
+.top-product__text {
+  @include indent-reset;
+  font-family: $main-font;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+  color: $secondary-text-color;
+}
+
+.top-product__specification {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    width: calc(100vw - 2 * $mobile-side-indent);
+    height: 1px;
+    background-color: $border-color;
+  }
+}
+
+.top-product__image-link {
+  line-height: 0;
+}
+
+.top-product__image {
+  height: auto;
+  width: 100%;
+}
+
+.top-product__price {
+  margin: 25px auto;
+}
+
+.top-product__order-button {
+  margin: 0 auto;
+  width: 260px;
+}
