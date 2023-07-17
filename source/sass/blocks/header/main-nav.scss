@@ -44,6 +44,10 @@
   z-index: 3;
 
   @include pointer;
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
 }
 
 .main-nav__list {

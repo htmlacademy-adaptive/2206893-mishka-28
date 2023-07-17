@@ -1,0 +1,61 @@
+.video {
+  @include grid-style(initial, initial);
+  padding: 0 $mobile-side-indent 58px $mobile-side-indent;
+}
+
+.video__title {
+  position: relative;
+  padding: 21px 12px 26px 90px;
+  border: 1px solid $border-color;
+  border-bottom: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 34px;
+    left: 33px;
+    width: 32px;
+    height: 22px;
+    background-color: $universal-color;
+    mask-image: url("../../img/svg/sprite.svg#video");
+    mask-size: 32px 22px;
+  }
+}
+
+.video__image-link {
+  position: relative;
+  line-height: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 37px;
+    left: 50%;
+    width: 121px;
+    height: 91px;
+    background-image: url("../../img/svg/play.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateX(-50%);
+  }
+}
+
+.video__text-wrapper {
+  @include flex-style(column, initial, initial, initial);
+  padding: 35px 12px 32px 33px;
+  border: 1px solid $border-color;
+  border-top: none;
+}
+
+.video__text {
+  @include indent-reset;
+  margin-bottom: 41px;
+  font-size: 13px;
+}
+
+.video__order {
+  margin-right: 21px;
+  padding: 16px;
+  font-size: 18px;
+  line-height: 16px;
+}

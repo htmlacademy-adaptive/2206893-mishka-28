@@ -1,7 +1,10 @@
 .main-footer {
+  background-color: $secondary-color;
+}
+
+.main-footer-wrapper {
   @include flex-style(column, wrap, initial, initial);
   padding: 25px $mobile-side-indent 22px $mobile-side-indent;
-  background-color: $secondary-color;
 }
 
 .main-footer__logo-link {
