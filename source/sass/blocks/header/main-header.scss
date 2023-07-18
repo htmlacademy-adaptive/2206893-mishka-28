@@ -10,10 +10,23 @@
 }
 
 .main-header__logo-link {
+  position: relative;
   padding: 22px 22px 28px 22px;
   display: inline-flex;
   text-decoration: none;
   line-height: 0;
+
+  @media (max-width: ($tablet-width - 0.02)) {
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 22px;
+      left: 22px;
+      width: 79px;
+      height: 4px;
+      background-image: url("../../img/svg/sprite.svg#logo-line");
+    }
+  }
 }
 
 .main-header__delivery {
