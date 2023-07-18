@@ -1,0 +1,200 @@
+.personal-order {
+  @include flex-style(column, initial, initial, initial);
+}
+
+.personal-order__title {
+  position: relative;
+  padding: 73px $mobile-side-indent;
+  min-height: 177px;
+  text-align: center;
+  background-color: $secondary-color;
+}
+
+.personal-order__text {
+  @include indent-reset;
+  margin-bottom: 29px;
+  font-size: 13px;
+}
+
+.personal-order__form {
+  @include flex-style(column, initial, initial, initial);
+  padding: 17px $mobile-side-indent 55px $mobile-side-indent;
+}
+
+.personal-order__section {
+  @include indent-reset;
+  @include flex-style(column, initial, initial, initial);
+  border: none;
+
+  &--filter-type {
+    margin-bottom: 32px;
+
+    .personal-order__form-title::after {
+      width: calc(100% + $mobile-side-indent + 23px);
+    }
+  }
+
+  &--filter-color {
+    margin-bottom: 33px;
+
+    .personal-order__form-title::after {
+      width: calc(100% + $mobile-side-indent + 15px);
+    }
+  }
+
+  &--representation {
+    margin-bottom: 34px;
+
+    .personal-order__form-title::after {
+      width: calc(100% + $mobile-side-indent + 17px);
+    }
+  }
+
+  &--contacts {
+    margin-bottom: 34px;
+  }
+
+  &--comment {
+    margin-bottom: 17px;
+
+    .personal-order__form-title::after {
+      width: calc(100% + $mobile-side-indent + 20px);
+    }
+  }
+}
+
+.personal-order__list {
+  @include list-reset;
+  @include grid-style(13px, center);
+  margin-top: 31px;
+
+  &--colors {
+    gap: 23px;
+  }
+}
+
+.personal-order__control {
+  position: relative;
+  padding: 10px 0 10px 60px;
+  display: inline-flex;
+}
+
+.personal-order__control-text {
+  font-family: $main-font;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 18px;
+  color: $base-text-color;
+}
+
+.personal-order__control-mark {
+  @include pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid $secondary-text-color;
+}
+
+.personal-order__control-input[type="checkbox"] + .personal-order__control-mark {
+  width: 38px;
+  height: 38px;
+}
+
+.personal-order__control-input[type="checkbox"]:checked + .personal-order__control-mark::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 17px;
+  background-image: url("../../img/svg/sprite.svg#checkbox");
+  transform: translate(-50%, -50%);
+}
+
+.personal-order__control-input[type="radio"] + .personal-order__control-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.personal-order__control-input[type="radio"]:checked + .personal-order__control-mark::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: $interactive-color;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.personal-order__label {
+  @include flex-style(column, initial, initial, initial);
+}
+
+.personal-order__form-title {
+  position: relative;
+  margin-right: auto;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -$mobile-side-indent;
+    top: 8px;
+    width: 100vw;
+    min-width: 320px;
+    height: 1px;
+    background-color: $universal-color;
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -$mobile-side-indent;
+    height: 100%;
+    background-color: $base-color;
+    z-index: -1;
+  }
+
+  &--phone::after {
+    width: calc(100% + $mobile-side-indent + 28px);
+  }
+
+  &--email::after {
+    width: calc(100% + $mobile-side-indent + 19px);
+  }
+}
+
+.personal-order__input {
+  font-family: $main-font;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 18px;
+  color: $base-text-color;
+
+  &::placeholder {
+    opacity: 0.3;
+  }
+
+  &--comment {
+    margin-top: 23px;
+    padding: 15px;
+    height: 142px;
+    resize: none;
+    border: 2px solid $secondary-text-color;
+  }
+}
+
+.personal-order__footnote {
+  font-size: 14px;
+  line-height: 16px;
+  color: $secondary-text-color;
+  margin-bottom: 30px;
+}
