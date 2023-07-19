@@ -69,7 +69,18 @@
   margin-top: 31px;
 
   &--colors {
+    margin-top: 25px;
     gap: 23px;
+  }
+
+  &--representation {
+    margin-top: 29px;
+    gap: 22px;
+  }
+
+  &--contacts {
+    margin-top: 0;
+    gap: 34px;
   }
 }
 
@@ -144,10 +155,10 @@
   &::before {
     content: "";
     position: absolute;
-    left: -$mobile-side-indent;
+    left: 0;
     top: 8px;
-    width: 100vw;
-    min-width: 320px;
+    width: calc(100vw - 2 * $mobile-side-indent);
+    min-width: 260px;
     height: 1px;
     background-color: $universal-color;
     z-index: -1;
@@ -172,15 +183,32 @@
   }
 }
 
+.personal-order__label-text {
+  font-family: $main-font;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 18px;
+  color: $base-text-color;
+}
+
 .personal-order__input {
+  padding: 16px 10px 16px 0;
   font-family: $main-font;
   font-weight: 400;
   font-size: 17px;
   line-height: 18px;
   color: $base-text-color;
+  border: none;
+  border-bottom: 2px solid $secondary-text-color;
 
   &::placeholder {
     opacity: 0.3;
+  }
+
+  &--phone,
+  &--email {
+    margin-top: 5px;
+    padding: 16px 38px 16px 0;
   }
 
   &--comment {

@@ -15,11 +15,18 @@
 }
 
 .contacts__text {
+  position: relative;
   @include indent-reset;
   font-size: 14px;
   line-height: 30px;
   font-weight: 400;
   color: $secondary-text-color;
+
+  &--email {
+    text-decoration: underline;
+    text-decoration-color: $interactive-color;
+    text-underline-offset: 5px;
+   }
 }
 
 .contacts__map {
