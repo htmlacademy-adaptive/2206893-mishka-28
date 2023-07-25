@@ -1,20 +1,40 @@
 .about-us {
   @include flex-style(column, initial, initial, initial);
   padding: 31px $mobile-side-indent 29px $mobile-side-indent;
+
+  @media (min-width: $tablet-width) {
+    padding: 56px $tablet-side-indent 26px $tablet-side-indent;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 68px $tablet-side-indent 90px $tablet-side-indent;
+  }
 }
 
 .about-us__title {
   margin-bottom: 28px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 41px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 39px;
+  }
 }
 
 .about-us__list {
   @include list-reset;
-  @include grid-style(29px, initial);
+
+  @media (min-width: $tablet-width) {
+    column-count: 2;
+  }
 }
 
 .about-us__item {
   position: relative;
-  padding-top: 54px;
+  display: inline-flex;
+  padding: 54px 0 29px 0;
 
   &::before {
     content: "";
@@ -44,6 +64,10 @@
     width: 34px;
     height: 27px;
     background-image: url("../../img/svg/sprite.svg#like");
+
+    @media (min-width: $tablet-width) {
+      left: 8px;
+    }
   }
 
   &--ball::before {
@@ -52,6 +76,10 @@
     width: 35px;
     height: 34px;
     background-image: url("../../img/svg/sprite.svg#ball");
+
+    @media (min-width: $tablet-width) {
+      top: 4px;
+    }
   }
 
   &--rocket::before {
@@ -60,6 +88,10 @@
     width: 55px;
     height: 23px;
     background-image: url("../../img/svg/sprite.svg#rocket");
+
+    @media (min-width: $tablet-width) {
+      top: 3px;
+    }
   }
 
   &--gift::before {
@@ -68,5 +100,14 @@
     width: 33px;
     height: 32px;
     background-image: url("../../img/svg/sprite.svg#gift");
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 57px 35px 29px 0;
+    line-height: 22px;
+
+    &--gift {
+      padding-right: 40px;
+    }
   }
 }

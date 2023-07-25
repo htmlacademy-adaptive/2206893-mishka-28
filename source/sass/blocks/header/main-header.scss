@@ -1,12 +1,32 @@
 .main-header {
   position: relative;
-  box-shadow: 0 1px 0 0 $border-color, 0 1px 0 0 $border-color inset;
+  overflow: hidden;
   z-index: 1;
+
+  @media (max-width: ($tablet-width - 0.02)) {
+    box-shadow: 0 1px 0 0 $border-color, 0 1px 0 0 $border-color inset;
+  }
 }
 
 .main-header__wrapper {
-  @include flex-style(column, wrap, initial, center);
+  @include grid-style(initial, initial);
   position: relative;
+
+  @media (min-width: $tablet-width) {
+    padding: 0 $tablet-side-indent;
+  }
+}
+
+.main-header__icon {
+  @media (min-width: $tablet-width) {
+    width: 114px;
+    height: 46px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 149px;
+    height: 72px;
+  }
 }
 
 .main-header__logo-link {
@@ -15,6 +35,7 @@
   display: inline-flex;
   text-decoration: none;
   line-height: 0;
+  justify-self: center;
 
   @media (max-width: ($tablet-width - 0.02)) {
     &::before {
@@ -26,6 +47,18 @@
       height: 4px;
       background-image: url("../../img/svg/sprite.svg#logo-line");
     }
+  }
+
+  @media (min-width: $tablet-width) {
+    position: absolute;
+    padding: 22px 22px 20px 0;
+    left: $tablet-side-indent;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 9px 10px 8px 10px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 

@@ -3,9 +3,19 @@
   color: $base-text-color;
   font-family: $main-font;
   font-size: 27px;
+  line-height: 30px;
   font-style: normal;
   font-weight: 700;
-  line-height: 30px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 53px;
+    line-height: 57px;
+  }
 }
 
 .index-title {
@@ -13,10 +23,20 @@
   color: $base-text-color;
   font-family: $main-font;
   font-size: 25px;
+  line-height: 30px;
   font-style: normal;
   font-weight: 700;
-  line-height: 30px;
   text-decoration: none;
+
+  @media (min-width: $tablet-width) {
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 53px;
+    line-height: 57px;
+  }
 }
 
 .subtitle {
@@ -24,9 +44,13 @@
   color: $base-text-color;
   font-family: $main-font;
   font-size: 17px;
+  line-height: 24px;
   font-style: normal;
   font-weight: 700;
-  line-height: 24px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+  }
 }
 
 .title-form {
@@ -34,8 +58,8 @@
   color: $universal-color;
   font-family: $main-font;
   font-size: 17px;
+  line-height: 16px;
   font-style: normal;
   font-weight: 700;
-  line-height: 16px;
   text-transform: uppercase;
 }

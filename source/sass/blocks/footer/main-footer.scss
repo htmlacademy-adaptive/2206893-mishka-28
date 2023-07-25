@@ -3,13 +3,27 @@
 }
 
 .main-footer-wrapper {
-  @include flex-style(column, wrap, initial, initial);
+  @include grid-style(initial, initial);
   padding: 25px $mobile-side-indent 22px $mobile-side-indent;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: 102px 40% auto;
+    gap: 30px;
+    padding: 51px $tablet-side-indent 58px $tablet-side-indent;
+    justify-content: space-between;
+  }
 }
 
 .main-footer__logo-link {
-  @media (max-width: ($tablet-width - 0.02)) {
-    display: none;
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: inline-flex;
+    height: 34px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 102px 34px;
+    background-image: url("../../img/svg/logo-footer.svg");
   }
 }
 
@@ -30,6 +44,10 @@
       height: 1px;
       background-color: #e5e5e5;
     }
+  }
+
+  @media (min-width: $tablet-width) {
+    margin: 0;
   }
 }
 
@@ -53,17 +71,24 @@
   &--telegram {
     mask-image: url("../../img/svg/sprite.svg#telegram");
   }
+
+  @media (min-width: $tablet-width) {
+    height: 34px;
+  }
 }
 
 .main-footer__copyright-link {
   @include grid-style(27px, initial);
   grid-template-columns: auto auto;
-  align-self: center;
   font-size: 19px;
   line-height: 18px;
   font-weight: 700;
   color: $base-text-color;
   text-decoration: none;
+
+  @media (min-width: $tablet-width) {
+    gap: 26px;
+  }
 }
 
 .main-footer__copyright-text {

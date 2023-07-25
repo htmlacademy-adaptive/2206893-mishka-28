@@ -24,33 +24,37 @@
         </a>
         <!-- Класс main-nav--nojs стоит при отключенном js и при включении js он автоматически удаляется, а класс main-nav--hidden используется для скрытия навигации при активном js -->
         <nav class="main-nav main-nav--nojs">
-          <ul class="main-nav__list">
-            <li class="main-nav__item">
-              <a class="main-nav__link active-link" tabindex="-1" href="#">Каталог товаров</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link" href="form.html">Вязание на заказ</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link main-nav__link--search" href="#">Поиск по сайту</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link main-nav__link--cart" href="#">Корзина: пока пуста</a>
-            </li>
-          </ul>
+          <div class="main-nav__wrapper">
+            <ul class="main-nav__list main-nav__list--principal">
+              <li class="main-nav__item">
+                <a class="main-nav__link main-nav__link--principal active-link" tabindex="-1" href="#">Каталог товаров</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link main-nav__link--principal" href="form.html">Вязание на заказ</a>
+              </li>
+            </ul>
+            <ul class="main-nav__list main-nav__list--secondary">
+              <li class="main-nav__item">
+                <a class="main-nav__link main-nav__link--search" href="#">Поиск по сайту</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link main-nav__link--cart" href="#">Корзина: пока пуста</a>
+              </li>
+            </ul>
+            <ul class="main-nav__list main-nav__list--additional">
+              <li class="secondary-navigation__item">
+                <a class="secondary-navigation__link" href="#">Новые поступления</a>
+              </li>
+              <li class="secondary-navigation__item">
+                <a class="secondary-navigation__link" href="#">Распродажа</a>
+              </li>
+            </ul>
+            <p class="main-nav__delivery">Бесплатная доставка по России</p>
+          </div>
           <button class="main-nav__toggle" type="button">
             <span class="visually-hidden">Открыть/закрыть меню</span>
           </button>
         </nav>
-        <ul class="secondary-navigation">
-          <li class="secondary-navigation__item">
-            <a class="secondary-navigation__link" href="#">Новые поступления</a>
-          </li>
-          <li class="secondary-navigation__item">
-            <a class="secondary-navigation__link" href="#">Распродажа</a>
-          </li>
-        </ul>
-        <p class="main-header__delivery">Бесплатная доставка по России</p>
       </div>
     </header>
     <main class="main-index">

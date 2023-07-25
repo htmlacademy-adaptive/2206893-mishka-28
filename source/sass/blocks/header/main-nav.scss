@@ -1,6 +1,6 @@
 .main-nav {
   @media (max-width: ($tablet-width - 0.02)) {
-    &--hidden .main-nav__list {
+    &--hidden .main-nav__wrapper {
       display: none;
     }
   }
@@ -10,7 +10,7 @@
       display: none;
     }
 
-    .main-nav__list {
+    .main-nav__wrapper {
       @media (max-width: ($tablet-width - 0.02)) {
         position: relative;
         width: 100vw;
@@ -26,6 +26,26 @@
     height: 14px;
     top: 32px;
     right: 31px;
+  }
+}
+
+.main-nav__wrapper {
+  @include grid-style(initial, initial);
+  width: 100%;
+
+  @media (max-width: ($tablet-width - 0.02)) {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: auto 1fr;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: auto 180px 1fr;
   }
 }
 
@@ -53,34 +73,87 @@
 .main-nav__list {
   @include list-reset;
   @include flex-style(column, wrap, initial, initial);
+  position: relative;
   background-color: $base-color;
-  width: 100%;
 
-  @media (max-width: ($tablet-width - 0.02)) {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
+  &--additional {
+    @media (max-width: ($desktop-width - 0.02)) {
+      display: none;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    background-color: $transparent;
+
+    &--principal {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      gap: 0 37px;
+    }
+
+    &--secondary {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      margin-left: auto;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 88px;
+        left: -100vw;
+        width: 200vw;
+        height: 1px;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    &--principal {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      gap: 0 71px;
+    }
+
+    &--secondary {
+      grid-column: 3 / 4;
+      grid-row: 1 / 2;
+    }
+
+    &--additional {
+      flex-direction: row;
+      background-color: $transparent;
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      gap: 0 61px;
+    }
   }
 }
 
 .main-nav__item {
   display: inline-flex;
-  box-shadow: 0 1px 0 0 $border-color, 0 1px 0 0 $border-color inset;
+
+  @media (max-width: ($tablet-width - 0.02)) {
+    box-shadow: 0 1px 0 0 $border-color, 0 1px 0 0 $border-color inset;
+  }
 }
 
 .main-nav__link {
   position: relative;
   display: inline-flex;
-  margin: 0 auto;
-  padding: 28px 50px 27px 76px;
-  width: 320px;
   font-family: $main-font;
   font-size: 17px;
   line-height: 24px;
   font-weight: 700;
   color: $base-text-color;
   text-decoration: none;
+
+  @media (max-width: ($tablet-width - 0.02)) {
+    margin: 0 auto;
+    padding: 28px 50px 27px 76px;
+    width: 320px;
+  }
 
   &--search::before,
   &--cart::before {
@@ -105,5 +178,83 @@
     width: 21px;
     mask-image: url("../../img/svg/sprite.svg#cart");
     mask-size: 21px 18px;
+  }
+
+  @media (min-width: $tablet-width) {
+    &--principal {
+      font-size: 15px;
+      padding: 20px 0;
+    }
+
+    &--cart {
+      padding: 32px 0 33px 82px;
+
+      &::before {
+        top: 35px;
+        left: 31px;
+      }
+    }
+
+    &--search {
+      width: 84px;
+      height: 89px;
+      line-height: 0;
+      font-size: 0;
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+      border-left: 1px solid rgba(0, 0, 0, 0.1);
+
+      &::before {
+        top: 36px;
+        left: 34px;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    &--principal {
+      padding: 32px 0;
+      font-size: 17px;
+    }
+
+    &--additional {
+      padding: 20px 0;
+      font-size: 15px;
+    }
+  }
+}
+
+.main-nav__delivery {
+  @media (max-width: ($tablet-width - 0.02)) {
+    display: none;
+  }
+
+  @media (min-width: $tablet-width) {
+    position: relative;
+    margin: 0;
+    padding: 20px 0;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    justify-self: right;
+    color: $secondary-text-color;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100vw;
+      width: 200vw;
+      height: 100%;
+      background-color: $secondary-color;
+      z-index: -1;
+    }
+
+    &--index::before {
+      background-color: #f9f9f9;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
   }
 }
