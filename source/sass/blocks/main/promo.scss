@@ -1,5 +1,8 @@
-// .promo {
-// }
+.promo {
+  @media (min-width: $desktop-width) {
+    background-color: #f9f9f9;
+  }
+}
 
 .promo-wrapper {
   @include grid-style(initial, initial);
