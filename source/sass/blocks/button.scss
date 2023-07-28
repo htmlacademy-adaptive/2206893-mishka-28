@@ -14,4 +14,8 @@
   border: 2px solid $secondary-text-color;
 
   @include pointer;
+
+  @media (min-width: $tablet-width) {
+    font-size: 17px;
+  }
 }

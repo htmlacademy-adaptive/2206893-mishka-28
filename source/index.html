@@ -146,10 +146,16 @@
       <section class="contacts container">
         <h2 class="contacts__title index-title">Контакты</h2>
         <dl class="contacts__list">
-          <dt class="contacts__part contacts__text">e-mail:</dt>
-          <dd class="contacts__details contacts__text contacts__text--email">info@mimimishkashop.ru</dd>
-          <dt class="contacts__part contacts__text">адрес:</dt>
-          <dd class="contacts__details contacts__text">г. Санкт-Петербург ул.&nbsp;Большая Конюшенная д. 19/8, офис 101</dd>
+          <div class="contacts__part">
+            <dt class="contacts__text">e-mail:</dt>
+            <dd class="contacts__text">
+              <a class="contacts__text--email" href="mailto:info@mimimishkashop.ru">info@mimimishkashop.ru</a>
+            </dd>
+          </div>
+          <div class="contacts__part">
+            <dt class="contacts__text">адрес:</dt>
+            <dd class="contacts__text">г. Санкт-Петербург ул.&nbsp;Большая Конюшенная д.&nbsp;19/8, офис 101</dd>
+          </div>
         </dl>
         <div class="contacts__map">
           <iframe class="contacts__google-map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3997.151539894556!2d30.322382210467968!3d59.93918135320076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sru!4v1688334562074!5m2!1ses!2sru" width="320" height="455" allowfullscreen title="Мы на карте"></iframe>
@@ -194,27 +200,31 @@
     </footer>
     <div class="modal-container modal-container--close">
       <div class="modal-container__order">
+        <!-- Сброс выбранных размеров должен реализовываться на js, в данном проекте реализовано только открытие и закрытие окна для проверки его корректного отображения, без сброса -->
         <form class="modal-container__form" action="https://echo.htmlacademy.ru/" method="post">
-          <h2 class="modal-container__title">Добавить в корзину</h2>
+          <h2 class="modal-container__title">Добавить в&nbsp;корзину</h2>
           <fieldset class="modal-container__section">
             <legend class="modal-container__section-title">Выберите размер:</legend>
             <ul class="modal-container__list">
               <li class="modal-container__item">
                 <label class="modal-container__control">
                   <input class="visually-hidden modal-container__control-input" type="checkbox" name="size" value="S" checked>
-                  <span class="modal-container__control-mark">S</span>
+                  <span class="modal-container__control-mark"></span>
+                  <span class="modal-container__control-text">S</span>
                 </label>
               </li>
               <li class="modal-container__item">
                 <label class="modal-container__control">
                   <input class="visually-hidden modal-container__control-input" type="checkbox" name="size" value="M">
-                  <span class="modal-container__control-mark">M</span>
+                  <span class="modal-container__control-mark"></span>
+                  <span class="modal-container__control-text">M</span>
                 </label>
               </li>
               <li class="modal-container__item">
                 <label class="modal-container__control">
                   <input class="visually-hidden modal-container__control-input" type="checkbox" name="size" value="L">
-                  <span class="modal-container__control-mark">L</span>
+                  <span class="modal-container__control-mark"></span>
+                  <span class="modal-container__control-text">L</span>
                 </label>
               </li>
             </ul>
