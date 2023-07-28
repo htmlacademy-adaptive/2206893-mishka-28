@@ -156,4 +156,3 @@ initSlider();
 initChangeMap();
 initModalIndex();
 initModalCatalog();
-
