@@ -7,7 +7,44 @@
   padding: 73px $mobile-side-indent;
   min-height: 177px;
   text-align: center;
-  background-color: $secondary-color;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 100vw;
+    background-color: $secondary-color;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 36px $mobile-side-indent 87px $mobile-side-indent;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 100vw;
+      height: 24px;
+      background-image: url("../../img/svg/zigzag-fill-tablet.svg");
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 37px $mobile-side-indent 113px $mobile-side-indent;
+
+    &::after {
+      height: 34px;
+      background-image: url("../../img/svg/zigzag-fill-desktop.svg");
+      background-position: bottom center;
+    }
+  }
 }
 
 .catalog__list {

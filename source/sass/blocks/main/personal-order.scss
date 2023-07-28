@@ -7,7 +7,18 @@
   padding: 73px $mobile-side-indent;
   min-height: 177px;
   text-align: center;
-  background-color: $secondary-color;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 100vw;
+    background-color: $secondary-color;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
 }
 
 .personal-order__text {
