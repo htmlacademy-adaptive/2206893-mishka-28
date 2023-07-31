@@ -51,10 +51,33 @@
   @include list-reset;
   @include grid-style(30px, initial);
   padding: $mobile-side-indent;
+
+  @media (min-width: $tablet-width) {
+    padding: 67px $tablet-side-indent 53px $tablet-side-indent;
+    gap: 54px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 111px $tablet-side-indent 57px $tablet-side-indent;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 51px;
+  }
 }
 
 .catalog__item {
-  @include flex-style(column, initial, initial, initial);
+  @include grid-style(initial, initial);
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 0.02)) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-rows: auto 1fr;
+  }
+}
+
+.catalog__image-link {
+  line-height: 0;
 }
 
 .catalog__image {
@@ -62,6 +85,10 @@
   min-width: 260px;
   height: 100%;
   object-fit: cover;
+
+  @media (min-width: $tablet-width) {
+    width: 100%;
+  }
 }
 
 .catalog__text-wrapper {
@@ -69,6 +96,17 @@
   padding: 26px 27px;
   grid-template-columns: 1fr auto;
   border: 1px solid $border-color;
+
+  @media (min-width: $tablet-width) {
+    grid-template-rows: auto 1fr auto;
+    padding: 26px 33px 24px 33px;
+    border-left: none;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 26px 26px 24px 26px;
+    border: 1px solid $border-color;
+  }
 }
 
 .catalog__categoty {
@@ -87,26 +125,47 @@
   font-weight: 400;
   color: $secondary-text-color;
 
+  @media (min-width: $tablet-width) {
+    font-size: 15px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 37px;
+  }
+
   &::before {
     content: "";
     position: absolute;
-    top: calc(100% + 19px);
+    top: calc(100% + 18px);
     left: 0;
     width: 100%;
     height: 1px;
     background-color: $border-color;
+
+    @media (min-width: $tablet-width) {
+      top: calc(100% + 20px);
+    }
+
+    @media (min-width: $desktop-width) {
+      top: calc(100% + 14px);
+    }
   }
 }
 
 .catalog__price {
-  @include indent-reset;
+  @include list-reset;
   font-size: 15px;
   font-weight: 700;
   line-height: 24px;
   color: $base-text-color;
+
+  @media (min-width: $tablet-width) {
+    font-size: 17px;
+  }
 }
 
 .catalog__order-button {
+  @include pointer;
   position: relative;
   width: 30px;
   height: 24px;

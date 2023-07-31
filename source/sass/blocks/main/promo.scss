@@ -11,7 +11,7 @@
       width: 100vw;
       height: 24px;
       background-image: url("../../img/svg/zigzag-fill-tablet.svg");
-      z-index: 1;
+      z-index: 2;
     }
   }
 
@@ -63,6 +63,14 @@
 
   &:nth-child(even) {
     background-color: #56c3b2;
+  }
+
+  @media (min-width: $tablet-width) {
+    background: linear-gradient(to top, $transparent 2px, $universal-color 2px);
+
+    &:nth-child(even) {
+      background: linear-gradient(to top, $transparent 2px, #56c3b2 2px);
+    }
   }
 }
 
