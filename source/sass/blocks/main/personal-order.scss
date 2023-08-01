@@ -19,29 +19,54 @@
     transform: translateX(-50%);
     z-index: -1;
   }
+
+  @media (min-width: $tablet-width) {
+    padding: 36px $tablet-side-indent 87px $tablet-side-indent;
+  }
+}
+
+.personal-order__form {
+  @include flex-style(column, initial, initial, initial);
+  padding: 17px $mobile-side-indent 55px $mobile-side-indent;
+
+  @media (min-width: $tablet-width) {
+    padding: 54px 0 50px 0;
+  }
 }
 
 .personal-order__text {
   @include indent-reset;
   margin-bottom: 29px;
   font-size: 13px;
-}
 
-.personal-order__form {
-  @include flex-style(column, initial, initial, initial);
-  padding: 17px $mobile-side-indent 55px $mobile-side-indent;
+  @media (min-width: $tablet-width) {
+    margin-bottom: 13px;
+    padding: 0 $tablet-side-indent;
+    font-size: 17px;
+    line-height: 30px;
+  }
 }
 
 .personal-order__section {
   @include indent-reset;
-  @include flex-style(column, initial, initial, initial);
+  @include grid-style(initial, initial);
   border: none;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: 157px 1fr;
+    gap: 10px;
+    padding: 50px $tablet-side-indent;
+  }
 
   &--filter-type {
     margin-bottom: 32px;
 
     .personal-order__form-title::after {
       width: calc(100% + $mobile-side-indent + 23px);
+    }
+
+    @media (min-width: $tablet-width) {
+      margin-bottom: 0;
     }
   }
 
@@ -51,6 +76,11 @@
     .personal-order__form-title::after {
       width: calc(100% + $mobile-side-indent + 15px);
     }
+
+    @media (min-width: $tablet-width) {
+      margin-bottom: 0;
+      background-color: $secondary-color;
+    }
   }
 
   &--representation {
@@ -59,10 +89,20 @@
     .personal-order__form-title::after {
       width: calc(100% + $mobile-side-indent + 17px);
     }
+
+    @media (min-width: $tablet-width) {
+      margin-bottom: 0;
+    }
   }
 
   &--contacts {
     margin-bottom: 34px;
+
+    @media (min-width: $tablet-width) {
+      margin-bottom: 0;
+      background-color: $secondary-color;
+      grid-template-columns: initial;
+    }
   }
 
   &--comment {
@@ -70,6 +110,10 @@
 
     .personal-order__form-title::after {
       width: calc(100% + $mobile-side-indent + 20px);
+    }
+
+    @media (min-width: $tablet-width) {
+      margin-bottom: 0;
     }
   }
 }
@@ -82,6 +126,11 @@
   &--colors {
     margin-top: 25px;
     gap: 23px;
+
+    @media (min-width: $tablet-width) {
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
   }
 
   &--representation {
@@ -93,12 +142,20 @@
     margin-top: 0;
     gap: 34px;
   }
+
+  @media (min-width: $tablet-width) {
+    margin-top: 0;
+  }
 }
 
 .personal-order__control {
   position: relative;
   padding: 10px 0 10px 60px;
   display: inline-flex;
+
+  @media (min-width: $tablet-width) {
+    padding: 17px 0 17px 80px;
+  }
 }
 
 .personal-order__control-text {
@@ -107,6 +164,10 @@
   font-size: 17px;
   line-height: 18px;
   color: $base-text-color;
+
+  @media (min-width: $tablet-width) {
+    font-size: 19px;
+  }
 }
 
 .personal-order__control-mark {
@@ -121,8 +182,13 @@
 }
 
 .personal-order__control-input[type="checkbox"] + .personal-order__control-mark {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
+
+  @media (min-width: $tablet-width) {
+    width: 52px;
+    height: 52px;
+  }
 }
 
 .personal-order__control-input[type="checkbox"]:checked + .personal-order__control-mark::before {
@@ -134,12 +200,26 @@
   height: 17px;
   background-image: url("../../img/svg/sprite.svg#checkbox");
   transform: translate(-50%, -50%);
+  background-size: 24px 17px;
+  background-repeat: no-repeat;
+
+  @media (min-width: $tablet-width) {
+    width: 32px;
+    height: 22px;
+    background-size: 32px 22px;
+  }
 }
 
 .personal-order__control-input[type="radio"] + .personal-order__control-mark {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
+
+  @media (min-width: $tablet-width) {
+    width: 49px;
+    height: 49px;
+    top: 1px;
+  }
 }
 
 .personal-order__control-input[type="radio"]:checked + .personal-order__control-mark::before {
@@ -152,45 +232,59 @@
   background-color: $interactive-color;
   border-radius: 50%;
   transform: translate(-50%, -50%);
+
+  @media (min-width: $tablet-width) {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 
 .personal-order__label {
   @include flex-style(column, initial, initial, initial);
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    gap: 24px;
+    align-items: flex-start;
+  }
 }
 
 .personal-order__form-title {
   position: relative;
-  margin-right: auto;
 
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 8px;
-    width: calc(100vw - 2 * $mobile-side-indent);
-    min-width: 260px;
-    height: 1px;
-    background-color: $universal-color;
-    z-index: -1;
-  }
+  @media (max-width: ($tablet-width - 0.02)) {
+    margin-right: auto;
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -$mobile-side-indent;
-    height: 100%;
-    background-color: $base-color;
-    z-index: -1;
-  }
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: calc(100vw - 2 * $mobile-side-indent);
+      min-width: 260px;
+      height: 1px;
+      background-color: $universal-color;
+      z-index: -1;
+    }
 
-  &--phone::after {
-    width: calc(100% + $mobile-side-indent + 28px);
-  }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -$mobile-side-indent;
+      height: 100%;
+      background-color: $base-color;
+      z-index: -1;
+    }
 
-  &--email::after {
-    width: calc(100% + $mobile-side-indent + 19px);
+    &--phone::after {
+      width: calc(100% + $mobile-side-indent + 28px);
+    }
+
+    &--email::after {
+      width: calc(100% + $mobile-side-indent + 19px);
+    }
   }
 }
 
@@ -200,6 +294,10 @@
   font-size: 17px;
   line-height: 18px;
   color: $base-text-color;
+
+  @media (min-width: $tablet-width) {
+    padding: 16px 0;
+  }
 }
 
 .personal-order__input {
@@ -209,6 +307,7 @@
   font-size: 17px;
   line-height: 18px;
   color: $base-text-color;
+  background-color: $transparent;
   border: none;
   border-bottom: 2px solid $secondary-text-color;
 
@@ -228,6 +327,13 @@
     height: 142px;
     resize: none;
     border: 2px solid $secondary-text-color;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 100%;
+    min-width: 350px;
+    padding-left: 17px;
+    font-size: 19px;
   }
 }
 
