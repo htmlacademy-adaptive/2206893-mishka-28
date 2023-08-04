@@ -30,6 +30,7 @@
 }
 
 .main-header__logo-link {
+  @include basic-interactive;
   position: relative;
   padding: 22px 22px 28px 22px;
   display: inline-flex;

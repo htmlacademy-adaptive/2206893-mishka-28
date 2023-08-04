@@ -159,6 +159,7 @@
 }
 
 .main-nav__link {
+  @include basic-interactive;
   position: relative;
   display: inline-flex;
   font-family: $main-font;
@@ -167,6 +168,30 @@
   font-weight: 700;
   color: $base-text-color;
   text-decoration: none;
+
+  &--search:hover,
+  &--cart:hover {
+    opacity: 1;
+    color: rgb(0, 0, 0, 0.6);
+
+    &::before {
+      opacity: 1;
+      background-color: $universal-color;
+    }
+  }
+
+  &--search:active::before,
+  &--cart:active::before {
+    opacity: 1;
+    background-color: $universal-color;
+  }
+
+  &--search:focus-visible::before,
+  &--cart:focus-visible::before {
+    opacity: 1;
+    background-color: $universal-color;
+  }
+
 
   @media (max-width: ($tablet-width - 0.02)) {
     margin: 0 auto;

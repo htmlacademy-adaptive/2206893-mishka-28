@@ -18,12 +18,14 @@
   display: none;
 
   @media (min-width: $tablet-width) {
+    @include universal-interactive;
     display: inline-flex;
     height: 34px;
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 102px 34px;
-    background-image: url("../../img/svg/logo-footer.svg");
+    background-color: $base-text-color;
+    mask-repeat: no-repeat;
+    mask-position: left center;
+    mask-size: 102px 34px;
+    mask-image: url("../../img/svg/logo-footer.svg");
   }
 }
 
@@ -52,6 +54,7 @@
 }
 
 .main-footer__social-link {
+  @include universal-interactive;
   display: inline-flex;
   width: 34px;
   height: 27px;
@@ -88,6 +91,28 @@
 
   @media (min-width: $tablet-width) {
     gap: 26px;
+  }
+
+  &:hover {
+    .main-footer__copyright-icon {
+      color: $secondary-interactive-color;
+    }
+  }
+
+  &:active {
+    .main-footer__copyright-icon {
+      opacity: 0.3;
+      color: $secondary-interactive-color;
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    .main-footer__copyright-icon {
+      opacity: 0.5;
+      color: $secondary-interactive-color;
+    }
   }
 }
 

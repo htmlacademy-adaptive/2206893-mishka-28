@@ -28,3 +28,35 @@
   gap: $gap;
   align-items: $align;
 }
+
+@mixin basic-interactive {
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &:focus-visible {
+    opacity: 0.5;
+    outline: none;
+  }
+}
+
+@mixin universal-interactive {
+  &:hover {
+    background-color: $universal-color;
+  }
+
+  &:active {
+    background-color: $universal-color;
+    opacity: 0.3;
+  }
+
+  &:focus-visible {
+    background-color: $universal-color;
+    opacity: 0.5;
+    outline: none;
+  }
+}

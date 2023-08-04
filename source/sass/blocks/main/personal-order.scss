@@ -47,6 +47,10 @@
     font-size: 17px;
     line-height: 30px;
   }
+
+  @media (min-width: $desktop-width) {
+    padding: 0 225px;
+  }
 }
 
 .personal-order__section {
@@ -154,6 +158,10 @@
       .personal-order__form-title {
         padding-left: 61px;
       }
+
+      .personal-order__label {
+        grid-template-columns: 151px 1fr;
+      }
     }
   }
 }
@@ -192,6 +200,10 @@
       @media (min-width: $tablet-width) {
         gap: 24px;
         grid-template-columns: 143px 1fr;
+      }
+
+      @media (min-width: $desktop-width) {
+        grid-template-columns: 151px 1fr;
       }
     }
   }
@@ -293,6 +305,27 @@
   }
 }
 
+.personal-order__control-input {
+  &:hover + .personal-order__control-mark {
+    border-color: $interactive-color;
+  }
+
+  &:active + .personal-order__control-mark {
+    border-color: rgba(0, 0, 0, 0.3);
+  }
+
+  &[type="checkbox"]:active + .personal-order__control-mark {
+    border-color: rgba(68, 68, 68, 0.3);
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus-visible + .personal-order__control-mark {
+    border-color: rgba(98, 209, 186, 0.6);
+  }
+}
 
 .personal-order__label {
   @include flex-style(column, initial, initial, initial);
@@ -351,6 +384,7 @@
 
   @media (min-width: $desktop-width) {
     padding-left: 61px;
+    padding-top: 19px;
   }
 }
 
@@ -367,6 +401,44 @@
   }
 }
 
+.personal-order__phone-icon {
+  position: absolute;
+  top: 11px;
+  right: 6px;
+  width: 25px;
+  height: 24px;
+  opacity: 0.2;
+  background-color: $base-text-color;
+  mask-image: url("../../img/svg/sprite.svg#phone");
+
+  @media (min-width: $tablet-width) {
+    right: 26px;
+  }
+
+  @media (min-width: $desktop-width) {
+    right: 8px;
+  }
+}
+
+.personal-order__email-icon {
+  position: absolute;
+  top: 16px;
+  right: 3px;
+  width: 32px;
+  height: 22px;
+  opacity: 0.2;
+  background-color: $base-text-color;
+  mask-image: url("../../img/svg/sprite.svg#mail");
+
+  @media (min-width: $tablet-width) {
+    right: 22px;
+  }
+
+  @media (min-width: $desktop-width) {
+    right: 4px;
+  }
+}
+
 .personal-order__input {
   padding: 16px 10px 16px 0;
   font-family: $main-font;
@@ -380,6 +452,54 @@
 
   &::placeholder {
     opacity: 0.3;
+  }
+
+  &:hover {
+    border-color: $interactive-color;
+  }
+
+  &:hover + .personal-order__phone-icon {
+    opacity: 1;
+    background-color: $interactive-color;
+  }
+
+  &:hover + .personal-order__email-icon {
+    opacity: 1;
+    background-color: $interactive-color;
+  }
+
+  &:active {
+    border-color: $interactive-color;
+  }
+
+  &:active + .personal-order__phone-icon {
+    opacity: 1;
+    background-color: $interactive-color;
+  }
+
+  &:active + .personal-order__email-icon {
+    opacity: 1;
+    background-color: $interactive-color;
+  }
+
+  &:focus-visible {
+    opacity: 0.3;
+    border-color: $interactive-color;
+    outline: none;
+
+    &::placeholder {
+      opacity: 1;
+    }
+  }
+
+  &:focus-visible + .personal-order__phone-icon {
+    opacity: 0.5;
+    background-color: $interactive-color;
+  }
+
+  &:focus-visible + .personal-order__email-icon {
+    opacity: 0.5;
+    background-color: $interactive-color;
   }
 
   &--phone,
@@ -405,42 +525,6 @@
     padding-left: 17px;
     font-size: 19px;
     line-height: 26px;
-  }
-}
-
-.personal-order__phone-icon {
-  position: absolute;
-  top: 11px;
-  right: 6px;
-  width: 25px;
-  height: 24px;
-  opacity: 0.2;
-  background-image: url("../../img/svg/sprite.svg#phone");
-
-  @media (min-width: $tablet-width) {
-    right: 26px;
-  }
-
-  @media (min-width: $desktop-width) {
-    right: 8px;
-  }
-}
-
-.personal-order__email-icon {
-  position: absolute;
-  top: 16px;
-  right: 3px;
-  width: 32px;
-  height: 22px;
-  opacity: 0.2;
-  background-image: url("../../img/svg/sprite.svg#mail");
-
-  @media (min-width: $tablet-width) {
-    right: 22px;
-  }
-
-  @media (min-width: $desktop-width) {
-    right: 4px;
   }
 }
 
