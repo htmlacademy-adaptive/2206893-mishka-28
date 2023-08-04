@@ -330,8 +330,21 @@
     opacity: 0.3;
   }
 
-  &:disabled:hover + .personal-order__control-mark {
+  &:disabled + .personal-order__control-mark {
     pointer-events: none;
+    opacity: 0.3;
+  }
+
+  &:disabled:hover + .personal-order__control-mark {
+    border: 2px solid $secondary-text-color;
+  }
+
+  &:disabled:active + .personal-order__control-mark {
+    border: 2px solid $secondary-text-color;
+  }
+
+  &:disabled:focus-visible + .personal-order__control-mark {
+    border: 2px solid $secondary-text-color;
   }
 }
 
