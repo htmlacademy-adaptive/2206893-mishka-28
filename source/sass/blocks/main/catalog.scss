@@ -78,13 +78,14 @@
 
 .catalog__image-link {
   line-height: 0;
+  display: inline-flex;
+  align-items: flex-start;
 }
 
 .catalog__image {
   width: calc(100vw - 2 * $mobile-side-indent);
   min-width: 260px;
   height: 100%;
-  object-fit: cover;
 
   @media (min-width: $tablet-width) {
     width: 100%;
