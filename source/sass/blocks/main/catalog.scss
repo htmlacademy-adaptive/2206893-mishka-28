@@ -66,6 +66,20 @@
 
 .catalog__item {
   @include grid-style(initial, initial);
+  position: relative;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 0.02)) {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $transparent;
+      border: 1px solid $border-color;
+    }
+  }
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 0.02)) {
     grid-template-columns: 1fr 1fr;
@@ -74,12 +88,26 @@
   @media (min-width: $desktop-width) {
     grid-template-rows: auto 1fr;
   }
+
+  &:hover .catalog__text-wrapper {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &:active .catalog__text-wrapper {
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+  }
 }
 
 .catalog__image-link {
   line-height: 0;
   display: inline-flex;
   align-items: flex-start;
+  z-index: 1;
+
+  &:focus-visible {
+    opacity: 0.6;
+    outline: none;
+  }
 }
 
 .catalog__image {
@@ -87,7 +115,11 @@
   min-width: 260px;
   height: 100%;
 
-  @media (min-width: $tablet-width) {
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 0.02)) {
+    width: calc(50vw - $tablet-side-indent);
+  }
+
+  @media (min-width: $desktop-width) {
     width: 100%;
   }
 }
@@ -95,13 +127,13 @@
 .catalog__text-wrapper {
   @include grid-style(initial, initial);
   padding: 26px 27px;
-  grid-template-columns: 1fr auto;
   border: 1px solid $border-color;
+  grid-template-columns: 1fr auto;
 
   @media (min-width: $tablet-width) {
     grid-template-rows: auto 1fr auto;
-    padding: 26px 33px 24px 33px;
-    border-left: none;
+    padding: 27px 34px 25px 33px;
+    border: none;
   }
 
   @media (min-width: $desktop-width) {
@@ -111,6 +143,7 @@
 }
 
 .catalog__categoty {
+  @include basic-interactive;
   margin-bottom: 6px;
   text-decoration: none;
   grid-column: 1 / -1;
@@ -170,11 +203,11 @@
   position: relative;
   width: 30px;
   height: 24px;
-  opacity: 0.2;
 
   &::before {
     content: "";
     position: absolute;
+    opacity: 0.2;
     top: 0;
     right: -1px;
     width: 20px;
@@ -182,5 +215,24 @@
     background-color: $base-text-color;
     mask-image: url("../../img/svg/sprite.svg#cart");
     mask-size: 20px 19px;
+  }
+
+  &:hover::before {
+    background-color: $universal-color;
+    opacity: 1;
+  }
+
+  &:active::before {
+    background-color: $universal-color;
+    opacity: 0.3;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus-visible::before {
+    background-color: $universal-color;
+    opacity: 0.5;
   }
 }

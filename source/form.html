@@ -15,6 +15,7 @@
   <body>
     <header class="main-header">
       <div class="container main-header__wrapper">
+        <!-- Порядок перехода фокуса на разных экранах меняется по js -->
         <a class="main-header__logo-link" href="index.html">
           <picture>
             <source media="(min-width: 1150px)" srcset="img/svg/logo-header-desktop.svg">
@@ -24,6 +25,9 @@
         </a>
         <!-- Класс main-nav--nojs стоит при отключенном js и при включении js он автоматически удаляется, а класс main-nav--hidden используется для скрытия навигации при активном js -->
         <nav class="main-nav main-nav--nojs">
+          <button class="main-nav__toggle" type="button">
+            <span class="visually-hidden">Открыть/закрыть меню</span>
+          </button>
           <div class="main-nav__wrapper">
             <ul class="main-nav__list main-nav__list--principal">
               <li class="main-nav__item">
@@ -51,9 +55,6 @@
             </ul>
             <p class="main-nav__delivery">Бесплатная доставка по России</p>
           </div>
-          <button class="main-nav__toggle" type="button">
-            <span class="visually-hidden">Открыть/закрыть меню</span>
-          </button>
         </nav>
       </div>
     </header>

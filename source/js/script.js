@@ -10,6 +10,38 @@ const initOpenMenu = () => {
   });
 };
 
+const initChangeOrder= () => {
+  const logoLink = document.querySelector('.main-header__logo-link');
+  const principalMenuLink = document.querySelectorAll('.main-nav__link--principal');
+  const searchMenuLink = document.querySelector('.main-nav__link--search');
+  const cartMenuLink = document.querySelector('.main-nav__link--cart');
+  var mediaTablet = window.matchMedia('(min-width: 768px) and (max-width: 1149.98px)');
+  var mediaDesktop = window.matchMedia('(min-width: 1150px)');
+
+  if (mediaTablet.matches) {
+    if (!(logoLink.matches('.active-link'))) {
+      logoLink.setAttribute('tabindex', '1');
+    }
+
+    searchMenuLink.setAttribute('tabindex', '2');
+    cartMenuLink.setAttribute('tabindex', '2');
+  }
+
+  if (mediaDesktop.matches) {
+    if (!(logoLink.matches('.active-link'))) {
+      logoLink.setAttribute('tabindex', '2');
+    }
+
+    if (principalMenuLink.length > 0) {
+      for (var i = 0; i < principalMenuLink.length; i++) {
+        if (!(principalMenuLink[i].matches('.active-link'))) {
+          principalMenuLink[i].setAttribute('tabindex', '1')
+        }
+      }
+    }
+  }
+};
+
 const initMap = () => {
   const mapFrame = document.querySelector('.contacts__google-map');
 
@@ -151,6 +183,7 @@ const initModalCatalog = () => {
 };
 
 initOpenMenu();
+initChangeOrder();
 initMap();
 initSlider();
 initChangeMap();

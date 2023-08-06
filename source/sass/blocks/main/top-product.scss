@@ -28,9 +28,23 @@
 .top-product__categoty {
   position: relative;
   margin-bottom: 41px;
+  z-index: 1;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  &:active {
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  &:focus-visible {
+    color: rgba(0, 0, 0, 0.5);
+    outline: none;
+  }
 
   &::before {
-    content: attr(data);
+    content: attr(aria-label);
     position: absolute;
     top: calc(100% + 3px);
     left: 0;
@@ -137,6 +151,7 @@
 }
 
 .top-product__image-link {
+  @include basic-interactive;
   line-height: 0;
 
   @media (min-width: $tablet-width) {

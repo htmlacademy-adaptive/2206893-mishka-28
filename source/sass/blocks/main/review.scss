@@ -133,6 +133,7 @@
 .review__slider-button {
   @include indent-reset;
   @include pointer;
+  @include basic-interactive;
   position: relative;
   background-color: $transparent;
   height: 50px;

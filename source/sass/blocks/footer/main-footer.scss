@@ -83,6 +83,7 @@
 .main-footer__copyright-link {
   @include grid-style(27px, initial);
   grid-template-columns: auto auto;
+  margin: 0 auto;
   font-size: 19px;
   line-height: 18px;
   font-weight: 700;
