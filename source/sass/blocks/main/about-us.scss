@@ -1,0 +1,133 @@
+.about-us {
+  @include flex-style(column, initial, initial, initial);
+  padding: 31px $mobile-side-indent 29px $mobile-side-indent;
+
+  @media (min-width: $tablet-width) {
+    padding: 56px $tablet-side-indent 83px $tablet-side-indent;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 68px 225px 90px 225px;
+  }
+}
+
+.about-us__title {
+  margin-bottom: 28px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 41px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 39px;
+  }
+}
+
+.about-us__list {
+  @include list-reset;
+  @include grid-style(29px, initial);
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: 1fr 1fr;
+    gap: 54px 0;
+  }
+}
+
+.about-us__item {
+  position: relative;
+  display: inline-flex;
+  padding-top: 54px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+  }
+
+  &--ecology::before {
+    left: 8px;
+    top: 0;
+    width: 33px;
+    height: 38px;
+    background-image: url("../../img/svg/sprite.svg#ecology");
+  }
+
+  &--money::before {
+    left: 0;
+    top: 1px;
+    width: 47px;
+    height: 27px;
+    background-image: url("../../img/svg/sprite.svg#money");
+
+    @media (min-width: $tablet-width) {
+      left: 1px;
+      top: 3px;
+    }
+  }
+
+  &--like::before {
+    left: 7px;
+    top: 6px;
+    width: 34px;
+    height: 27px;
+    background-image: url("../../img/svg/sprite.svg#like");
+
+    @media (min-width: $tablet-width) {
+      left: 8px;
+      top: 9px;
+    }
+  }
+
+  &--ball::before {
+    left: 3px;
+    top: 3px;
+    width: 35px;
+    height: 34px;
+    background-image: url("../../img/svg/sprite.svg#ball");
+
+    @media (min-width: $tablet-width) {
+      top: 4px;
+    }
+  }
+
+  &--rocket::before {
+    left: -6px;
+    top: 4px;
+    width: 55px;
+    height: 23px;
+    background-image: url("../../img/svg/sprite.svg#rocket");
+
+    @media (min-width: $tablet-width) {
+      top: 6px;
+    }
+  }
+
+  &--gift::before {
+    left: 3px;
+    top: 2px;
+    width: 33px;
+    height: 32px;
+    background-image: url("../../img/svg/sprite.svg#gift");
+
+    @media (min-width: $tablet-width) {
+      top: 5px;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 56px 35px 0 0;
+    line-height: 22px;
+
+    &--gift {
+      padding-right: 40px;
+    }
+
+    &:nth-child(2) {
+      grid-row: 2 / 3;
+    }
+
+    &:nth-child(3) {
+      grid-row: 3 / 4;
+    }
+  }
+}

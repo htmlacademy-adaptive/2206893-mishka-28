@@ -1,0 +1,62 @@
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  list-style: none;
+}
+
+@mixin indent-reset {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin pointer {
+  cursor: pointer;
+}
+
+@mixin flex-style($direction, $wrap, $gap, $align) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  gap: $gap;
+  align-items: $align;
+}
+
+@mixin grid-style($gap, $align) {
+  display: grid;
+  gap: $gap;
+  align-items: $align;
+}
+
+@mixin basic-interactive {
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &:focus-visible {
+    opacity: 0.5;
+    outline: none;
+  }
+}
+
+@mixin universal-interactive {
+  &:hover {
+    background-color: $universal-color;
+  }
+
+  &:active {
+    background-color: $universal-color;
+    opacity: 0.3;
+  }
+
+  &:focus-visible {
+    background-color: $universal-color;
+    opacity: 0.5;
+    outline: none;
+  }
+}

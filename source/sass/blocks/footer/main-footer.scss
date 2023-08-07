@@ -1,0 +1,126 @@
+.main-footer {
+  background-color: $secondary-color;
+}
+
+.main-footer-wrapper {
+  @include grid-style(initial, initial);
+  padding: 25px $mobile-side-indent 22px $mobile-side-indent;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: 102px 40% auto;
+    gap: 30px;
+    padding: 51px $tablet-side-indent 58px $tablet-side-indent;
+    justify-content: space-between;
+  }
+}
+
+.main-footer__logo-link {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    @include universal-interactive;
+    display: inline-flex;
+    height: 34px;
+    background-color: $base-text-color;
+    mask-repeat: no-repeat;
+    mask-position: left center;
+    mask-size: 102px 34px;
+    mask-image: url("../../img/svg/logo-footer.svg");
+  }
+}
+
+.main-footer__social-list {
+  @include list-reset;
+  @include flex-style(initial, wrap, 10px 23px, initial);
+  justify-content: center;
+  position: relative;
+  margin-bottom: 51px;
+
+  @media (max-width: ($tablet-width - 0.02)) {
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -29px;
+      width: 100%;
+      height: 1px;
+      background-color: #e5e5e5;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    margin: 0;
+  }
+}
+
+.main-footer__social-link {
+  @include universal-interactive;
+  display: inline-flex;
+  width: 34px;
+  height: 27px;
+  background-color: $icon-color;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 28px 22px;
+
+  &--vkontakte {
+    mask-image: url("../../img/svg/sprite.svg#vk");
+  }
+
+  &--youtube {
+    mask-image: url("../../img/svg/sprite.svg#youtube");
+  }
+
+  &--telegram {
+    mask-image: url("../../img/svg/sprite.svg#telegram");
+  }
+
+  @media (min-width: $tablet-width) {
+    height: 34px;
+  }
+}
+
+.main-footer__copyright-link {
+  @include grid-style(27px, initial);
+  grid-template-columns: auto auto;
+  margin: 0 auto;
+  font-size: 19px;
+  line-height: 18px;
+  font-weight: 700;
+  color: $base-text-color;
+  text-decoration: none;
+
+  @media (min-width: $tablet-width) {
+    gap: 26px;
+  }
+
+  &:hover {
+    .main-footer__copyright-icon {
+      color: $secondary-interactive-color;
+    }
+  }
+
+  &:active {
+    .main-footer__copyright-icon {
+      opacity: 0.3;
+      color: $secondary-interactive-color;
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    .main-footer__copyright-icon {
+      opacity: 0.5;
+      color: $secondary-interactive-color;
+    }
+  }
+}
+
+.main-footer__copyright-text {
+  padding-top: 8px;
+}
+
+.main-footer__copyright-icon {
+  color: $universal-color;
+}

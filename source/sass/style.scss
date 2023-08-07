@@ -1,1 +1,24 @@
-// Начните писать стили здесь
+// миксины и переменные
+@import "./base/mixins.scss";
+@import "./base/variables.scss";
+
+// базовые свойства
+@import "./base/fonts.scss";
+@import "./base/base.scss";
+@import "./base/base-text.scss";
+
+// блоки компонентов
+@import "./blocks/button.scss";
+@import "./blocks/header/main-header.scss";
+@import "./blocks/header/main-nav.scss";
+@import "./blocks/main/main-container.scss";
+@import "./blocks/main/promo.scss";
+@import "./blocks/main/top-product.scss";
+@import "./blocks/main/about-us.scss";
+@import "./blocks/main/review.scss";
+@import "./blocks/main/contacts.scss";
+@import "./blocks/main/modal-container.scss";
+@import "./blocks/main/catalog.scss";
+@import "./blocks/main/video.scss";
+@import "./blocks/main/personal-order.scss";
+@import "./blocks/footer/main-footer.scss";

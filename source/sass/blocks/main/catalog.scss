@@ -1,0 +1,238 @@
+.catalog {
+  @include flex-style(column, initial, initial, initial);
+}
+
+.catalog__title {
+  position: relative;
+  padding: 73px $mobile-side-indent;
+  min-height: 177px;
+  text-align: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 100vw;
+    background-color: $secondary-color;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 36px $mobile-side-indent 87px $mobile-side-indent;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 100vw;
+      height: 24px;
+      background-image: url("../../img/svg/zigzag-fill-tablet.svg");
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 37px $mobile-side-indent 113px $mobile-side-indent;
+
+    &::after {
+      height: 34px;
+      background-image: url("../../img/svg/zigzag-fill-desktop.svg");
+      background-position: bottom center;
+    }
+  }
+}
+
+.catalog__list {
+  @include list-reset;
+  @include grid-style(30px, initial);
+  padding: $mobile-side-indent;
+
+  @media (min-width: $tablet-width) {
+    padding: 67px $tablet-side-indent 53px $tablet-side-indent;
+    gap: 54px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 111px $tablet-side-indent 57px $tablet-side-indent;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 51px;
+  }
+}
+
+.catalog__item {
+  @include grid-style(initial, initial);
+  position: relative;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 0.02)) {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $transparent;
+      border: 1px solid $border-color;
+    }
+  }
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 0.02)) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-rows: auto 1fr;
+  }
+
+  &:hover .catalog__text-wrapper {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &:active .catalog__text-wrapper {
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+  }
+}
+
+.catalog__image-link {
+  line-height: 0;
+  display: inline-flex;
+  align-items: flex-start;
+  z-index: 1;
+
+  &:focus-visible {
+    opacity: 0.6;
+    outline: none;
+  }
+}
+
+.catalog__image {
+  width: calc(100vw - 2 * $mobile-side-indent);
+  min-width: 260px;
+  height: 100%;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 0.02)) {
+    width: calc(50vw - $tablet-side-indent);
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 100%;
+  }
+}
+
+.catalog__text-wrapper {
+  @include grid-style(initial, initial);
+  padding: 26px 27px;
+  border: 1px solid $border-color;
+  grid-template-columns: 1fr auto;
+
+  @media (min-width: $tablet-width) {
+    grid-template-rows: auto 1fr auto;
+    padding: 27px 34px 25px 33px;
+    border: none;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 26px 26px 24px 26px;
+    border: 1px solid $border-color;
+  }
+}
+
+.catalog__categoty {
+  @include basic-interactive;
+  margin-bottom: 6px;
+  text-decoration: none;
+  grid-column: 1 / -1;
+}
+
+.catalog__specification {
+  @include indent-reset;
+  position: relative;
+  margin-bottom: 41px;
+  grid-column: 1 / -1;
+  font-size: 13px;
+  line-height: 30px;
+  font-weight: 400;
+  color: $secondary-text-color;
+
+  @media (min-width: $tablet-width) {
+    font-size: 15px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 37px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(100% + 18px);
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $border-color;
+
+    @media (min-width: $tablet-width) {
+      top: calc(100% + 20px);
+    }
+
+    @media (min-width: $desktop-width) {
+      top: calc(100% + 14px);
+    }
+  }
+}
+
+.catalog__price {
+  @include list-reset;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+  color: $base-text-color;
+
+  @media (min-width: $tablet-width) {
+    font-size: 17px;
+  }
+}
+
+.catalog__order-button {
+  @include pointer;
+  position: relative;
+  width: 30px;
+  height: 24px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    opacity: 0.2;
+    top: 0;
+    right: -1px;
+    width: 20px;
+    height: 19px;
+    background-color: $base-text-color;
+    mask-image: url("../../img/svg/sprite.svg#cart");
+    mask-size: 20px 19px;
+  }
+
+  &:hover::before {
+    background-color: $universal-color;
+    opacity: 1;
+  }
+
+  &:active::before {
+    background-color: $universal-color;
+    opacity: 0.3;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus-visible::before {
+    background-color: $universal-color;
+    opacity: 0.5;
+  }
+}

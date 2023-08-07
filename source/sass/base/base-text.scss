@@ -1,0 +1,65 @@
+.title {
+  @include indent-reset;
+  color: $base-text-color;
+  font-family: $main-font;
+  font-size: 27px;
+  line-height: 30px;
+  font-style: normal;
+  font-weight: 700;
+
+  @media (min-width: $tablet-width) {
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 53px;
+    line-height: 57px;
+  }
+}
+
+.index-title {
+  @include indent-reset;
+  color: $base-text-color;
+  font-family: $main-font;
+  font-size: 25px;
+  line-height: 30px;
+  font-style: normal;
+  font-weight: 700;
+  text-decoration: none;
+
+  @media (min-width: $tablet-width) {
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 53px;
+    line-height: 57px;
+  }
+}
+
+.subtitle {
+  @include indent-reset;
+  color: $base-text-color;
+  font-family: $main-font;
+  font-size: 17px;
+  line-height: 24px;
+  font-style: normal;
+  font-weight: 700;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+  }
+}
+
+.title-form {
+  @include indent-reset;
+  color: $universal-color;
+  font-family: $main-font;
+  font-size: 17px;
+  line-height: 16px;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+}

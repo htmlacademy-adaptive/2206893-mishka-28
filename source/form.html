@@ -9,12 +9,13 @@
     <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="img/favicons/apple.png"><!-- 180×180 -->
     <link rel="manifest" href="manifest.webmanifest">
-    <link rel="preload" href="fonts/ptsans.woff2" type="font/woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="fonts/ptsansbold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/opensans.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/opensansbold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   </head>
   <body>
     <header class="main-header">
-      <div class="container">
+      <div class="container main-header__wrapper">
+        <!-- Порядок перехода фокуса на разных экранах меняется по js -->
         <a class="main-header__logo-link" href="index.html">
           <picture>
             <source media="(min-width: 1150px)" srcset="img/svg/logo-header-desktop.svg">
@@ -24,164 +25,166 @@
         </a>
         <!-- Класс main-nav--nojs стоит при отключенном js и при включении js он автоматически удаляется, а класс main-nav--hidden используется для скрытия навигации при активном js -->
         <nav class="main-nav main-nav--nojs">
-          <ul class="main-nav__list">
-            <li class="main-nav__item">
-              <a class="main-nav__link" href="catalog.html">Каталог товаров</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link active-link" tabindex="-1" href="#">Вязание на заказ</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link" href="#">Поиск по сайту</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link" href="#">Корзина: пока пуста</a>
-            </li>
-          </ul>
           <button class="main-nav__toggle" type="button">
-            <span class="visually-hidden">Открыть меню</span>
+            <span class="visually-hidden">Открыть/закрыть меню</span>
           </button>
+          <div class="main-nav__wrapper">
+            <ul class="main-nav__list main-nav__list--principal">
+              <li class="main-nav__item">
+                <a class="main-nav__link main-nav__link--principal" href="catalog.html">Каталог товаров</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link main-nav__link--principal active-link" tabindex="-1" href="#">Вязание на заказ</a>
+              </li>
+            </ul>
+            <ul class="main-nav__list main-nav__list--secondary">
+              <li class="main-nav__item">
+                <a class="main-nav__link main-nav__link--search" href="#">Поиск по сайту</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link main-nav__link--cart" href="#">Корзина: пока пуста</a>
+              </li>
+            </ul>
+            <ul class="main-nav__list main-nav__list--additional">
+              <li class="main-nav__item">
+                <a class="main-nav__link main-nav__link--additional" href="#">Новые поступления</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link main-nav__link--additional" href="#">Распродажа</a>
+              </li>
+            </ul>
+            <p class="main-nav__delivery">Бесплатная доставка по России</p>
+          </div>
         </nav>
-        <ul class="secondary-navigation">
-          <li class="secondary-navigation__item">
-            <a class="secondary-navigation__link" href="#">Новые поступления</a>
-          </li>
-          <li class="secondary-navigation__item">
-            <a class="secondary-navigation__link" href="#">Распродажа</a>
-          </li>
-        </ul>
-        <p class="main-header__delivery">Бесплатная доставка по России</p>
       </div>
     </header>
     <main class="main-index">
-      <section class="personal-order">
-        <div class="container">
-          <h1 class="personal-order__title title">Вязание на заказ</h1>
+      <section class="personal-order container">
+        <h1 class="personal-order__title title">Вязание на заказ</h1>
+        <form class="personal-order__form" action="https://echo.htmlacademy.ru/" method="post">
           <p class="personal-order__text">Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.</p>
-          <form class="personal-order__form" action="https://echo.htmlacademy.ru/" method="post">
-            <fieldset class="personal-order personal-order--filter-group">
-              <legend class="personal-order__title title-form">Тип</legend>
-              <ul class="personal-order__list personal-order__list--type">
-                <li class="personal-order__item">
-                  <label class="personal-order___control">
-                    <input class="visually-hidden personal-order___control-input" type="radio" name="type" value="interior" checked>
-                    <span class="personal-order___control-mark"></span>
-                    <span class="personal-order___control-text">Аксессуар для интерьера</span>
-                  </label>
-                </li>
-                <li class="personal-order__item">
-                  <label class="personal-order___control">
-                    <input class="visually-hidden personal-order___control-input" type="radio" name="type" value="toy">
-                    <span class="personal-order___control-mark"></span>
-                    <span class="personal-order___control-text">Детская игрушка</span>
-                  </label>
-                </li>
-              </ul>
-            </fieldset>
-            <fieldset class="personal-order personal-order--filter-group">
-              <legend class="personal-order__title title-form">Цвет</legend>
-              <ul class="personal-order__list personal-order__list--colors">
-                <li class="personal-order__item">
-                  <label class="personal-order___control">
-                    <input class="visually-hidden personal-order___control-input" type="checkbox" name="colors" value="white" checked>
-                    <span class="personal-order___control-mark"></span>
-                    <span class="personal-order___control-text review-text">Белый</span>
-                  </label>
-                </li>
-                <li class="personal-order__item">
-                  <label class="personal-order___control">
-                    <input class="visually-hidden personal-order___control-input" type="checkbox" name="colors" value="grey" checked>
-                    <span class="personal-order___control-mark"></span>
-                    <span class="personal-order___control-text review-text">Серый</span>
-                  </label>
-                </li>
-                <li class="personal-order__item">
-                  <label class="personal-order___control">
-                    <input class="visually-hidden personal-order___control-input" type="checkbox" name="colors" value="tiffani">
-                    <span class="personal-order___control-mark"></span>
-                    <span class="personal-order___control-text review-text">Тиффани</span>
-                  </label>
-                </li>
-                <li class="personal-order__item">
-                  <label class="personal-order___control">
-                    <input class="visually-hidden personal-order___control-input" type="checkbox" name="colors" value="black">
-                    <span class="personal-order___control-mark"></span>
-                    <span class="personal-order___control-text review-text">Черный</span>
-                  </label>
-                </li>
-                <li class="personal-order__item">
-                  <label class="personal-order___control">
-                    <input class="visually-hidden personal-order___control-input" type="checkbox" name="colors" value="pink">
-                    <span class="personal-order___control-mark"></span>
-                    <span class="personal-order___control-text review-text">Розовый</span>
-                  </label>
-                </li>
-                <li class="personal-order__item">
-                  <label class="personal-order___control">
-                    <input class="visually-hidden personal-order___control-input" type="checkbox" name="colors" value="orange">
-                    <span class="personal-order___control-mark"></span>
-                    <span class="personal-order___control-text review-text">Оранжевый</span>
-                  </label>
-                </li>
-              </ul>
-            </fieldset>
-            <div class="personal-order personal-order--representation">
-              <h2 class="personal-order__title title-form">ФИО:</h2>
-              <ul class="personal-order__list">
-                <li class="personal-order__item">
-                  <label class="personal-order__label">
-                    <span class="personal-order__label-text">Имя:</span>
-                    <input class="personal-order__input" type="text" placeholder="Введите ваше имя*" name="name" required>
-                  </label>
-                </li>
-                <li class="personal-order__item">
-                  <label class="personal-order__label">
-                    <span class="personal-order__label-text">Фамилия:</span>
-                    <input class="personal-order__input" type="text" placeholder="Укажите фамилию*" name="surname" required>
-                  </label>
-                </li>
-                <li class="personal-order__item">
-                  <label class="personal-order__label">
-                    <span class="personal-order__label-text">Отчество:</span>
-                    <input class="personal-order__input" type="text" placeholder="Отчество, если желаете" name="patronymic">
-                  </label>
-                </li>
-              </ul>
-            </div>
-            <div class="personal-order personal-order--contacts">
-              <h2 class="visually-hidden">Контактная информация:</h2>
-              <ul class="personal-order__list">
-                <li class="personal-order__item">
-                  <label class="personal-order__label">
-                    <span class="personal-order__label-contact title-form">Контактный телефон:</span>
-                    <input class="personal-order__input personal-order__input--phone" type="tel" pattern="+7\s\d{3}\s\d{3}\s\d{2}\s\d{2}" placeholder="+7 ХХХ ХХХ ХХ ХХ*" name="phone" required>
-                    <span class="personal-order__phone-icon"></span>
-                  </label>
-                </li>
-                <li class="personal-order__item">
-                  <label class="personal-order__label">
-                    <span class="personal-order__label-contact title-form">Электронная почта:</span>
-                    <input class="personal-order__input personal-order__input--email" type="email" placeholder="Ваш Email*" name="email" required>
-                    <span class="personal-order__email-icon"></span>
-                  </label>
-                </li>
-              </ul>
-            </div>
-            <div class="personal-order personal-order--comment">
-              <label class="personal-order__label">
-                <span class="personal-order__title title-form">Доп</span>
-                <textarea class="personal-order__input personal-order__input--comment" name="comment-text" minlength="5" placeholder="Опишите все ваши пожелания к заказу"></textarea>
-              </label>
-            </div>
-            <span class="personal-order__footnote">*Поля обязательны для заполнения</span>
-            <button class="personal-order__submit-button button" type="submit">Отправить заказ</button>
-          </form>
-        </div>
+          <fieldset class="personal-order__section personal-order__section--filter-type">
+            <h2 class="personal-order__form-title title-form">Тип</h2>
+            <ul class="personal-order__list personal-order__list--type">
+              <li class="personal-order__item">
+                <label class="personal-order__control">
+                  <input class="visually-hidden personal-order__control-input" type="radio" name="type" value="interior" checked>
+                  <span class="personal-order__control-mark"></span>
+                  <span class="personal-order__control-text">Аксессуар для интерьера</span>
+                </label>
+              </li>
+              <li class="personal-order__item">
+                <label class="personal-order__control">
+                  <input class="visually-hidden personal-order__control-input" type="radio" name="type" value="toy">
+                  <span class="personal-order__control-mark"></span>
+                  <span class="personal-order__control-text">Детская игрушка</span>
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="personal-order__section personal-order__section--filter-color">
+            <h2 class="personal-order__form-title title-form">Цвет</h2>
+            <ul class="personal-order__list personal-order__list--colors">
+              <li class="personal-order__item">
+                <label class="personal-order__control">
+                  <input class="visually-hidden personal-order__control-input" type="checkbox" name="colors" value="white" checked>
+                  <span class="personal-order__control-mark"></span>
+                  <span class="personal-order__control-text review-text">Белый</span>
+                </label>
+              </li>
+              <li class="personal-order__item">
+                <label class="personal-order__control">
+                  <input class="visually-hidden personal-order__control-input" type="checkbox" name="colors" value="grey" checked>
+                  <span class="personal-order__control-mark"></span>
+                  <span class="personal-order__control-text review-text">Серый</span>
+                </label>
+              </li>
+              <li class="personal-order__item">
+                <label class="personal-order__control">
+                  <input class="visually-hidden personal-order__control-input" type="checkbox" name="colors" value="tiffani">
+                  <span class="personal-order__control-mark"></span>
+                  <span class="personal-order__control-text review-text">Тиффани</span>
+                </label>
+              </li>
+              <li class="personal-order__item">
+                <label class="personal-order__control">
+                  <input class="visually-hidden personal-order__control-input" type="checkbox" name="colors" value="black">
+                  <span class="personal-order__control-mark"></span>
+                  <span class="personal-order__control-text review-text">Черный</span>
+                </label>
+              </li>
+              <li class="personal-order__item">
+                <label class="personal-order__control">
+                  <input class="visually-hidden personal-order__control-input" type="checkbox" name="colors" value="pink">
+                  <span class="personal-order__control-mark"></span>
+                  <span class="personal-order__control-text review-text">Розовый</span>
+                </label>
+              </li>
+              <li class="personal-order__item">
+                <label class="personal-order__control">
+                  <input class="visually-hidden personal-order__control-input" type="checkbox" name="colors" value="orange">
+                  <span class="personal-order__control-mark"></span>
+                  <span class="personal-order__control-text review-text">Оранжевый</span>
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+          <div class="personal-order__section personal-order__section--representation">
+            <h2 class="personal-order__form-title title-form">ФИО:</h2>
+            <ul class="personal-order__list personal-order__list--representation">
+              <li class="personal-order__item">
+                <label class="personal-order__label">
+                  <span class="personal-order__label-text">Имя:</span>
+                  <input class="personal-order__input" type="text" placeholder="Введите ваше имя*" name="name" required>
+                </label>
+              </li>
+              <li class="personal-order__item">
+                <label class="personal-order__label">
+                  <span class="personal-order__label-text">Фамилия:</span>
+                  <input class="personal-order__input" type="text" placeholder="Укажите фамилию*" name="surname" required>
+                </label>
+              </li>
+              <li class="personal-order__item">
+                <label class="personal-order__label">
+                  <span class="personal-order__label-text">Отчество:</span>
+                  <input class="personal-order__input" type="text" placeholder="Отчество, если желаете" name="patronymic">
+                </label>
+              </li>
+            </ul>
+          </div>
+          <div class="personal-order__section personal-order__section--contacts">
+            <h2 class="visually-hidden">Контактная информация:</h2>
+            <ul class="personal-order__list personal-order__list--contacts">
+              <li class="personal-order__item">
+                <label class="personal-order__label">
+                  <span class="personal-order__form-title personal-order__form-title--phone title-form">Тел</span>
+                  <input class="personal-order__input personal-order__input--phone" type="tel" pattern="+7\s\d{3}\s\d{3}\s\d{2}\s\d{2}" placeholder="+7 ХХХ ХХХ ХХ ХХ*" name="phone" required>
+                  <span class="personal-order__phone-icon"></span>
+                </label>
+              </li>
+              <li class="personal-order__item">
+                <label class="personal-order__label">
+                  <span class="personal-order__form-title personal-order__form-title--email title-form">E-mail</span>
+                  <input class="personal-order__input personal-order__input--email" type="email" placeholder="Ваш Email*" name="email" required>
+                  <span class="personal-order__email-icon"></span>
+                </label>
+              </li>
+            </ul>
+          </div>
+          <div class="personal-order__section personal-order__section--comment">
+            <label class="personal-order__label">
+              <span class="personal-order__form-title title-form">Доп</span>
+              <textarea class="personal-order__input personal-order__input--comment" name="comment-text" minlength="5" placeholder="Опишите все ваши пожелания к заказу"></textarea>
+            </label>
+          </div>
+          <span class="personal-order__footnote">*Поля обязательны для заполнения</span>
+          <button class="personal-order__submit-button button" type="submit">Отправить заказ</button>
+        </form>
       </section>
     </main>
     <footer class="main-footer">
-      <div class="container">
-        <a class="main-footer__logo-link" href="index.html" aria-label="Логотип магазина."></a>
+      <div class="container main-footer-wrapper">
+        <a class="main-footer__logo-link" href="index.html" aria-label="Перейти на главную страницу."></a>
         <ul class="main-footer__social-list">
           <li class="main-footer__social-item">
             <a class="main-footer__social-link main-footer__social-link--vkontakte" target="_blank" href="https://vk.com/htmlacademy">

@@ -9,12 +9,13 @@
     <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="img/favicons/apple.png"><!-- 180×180 -->
     <link rel="manifest" href="manifest.webmanifest">
-    <link rel="preload" href="fonts/ptsans.woff2" type="font/woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="fonts/ptsansbold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/opensans.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/opensansbold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   </head>
   <body>
     <header class="main-header">
-      <div class="container">
+      <div class="container main-header__wrapper">
+        <!-- Порядок перехода фокуса на разных экранах меняется по js -->
         <a class="main-header__logo-link active-link" tabindex="-1" href="#">
           <picture>
             <source media="(min-width: 1150px)" srcset="img/svg/logo-header-desktop.svg">
@@ -24,48 +25,59 @@
         </a>
         <!-- Класс main-nav--nojs стоит при отключенном js и при включении js он автоматически удаляется, а класс main-nav--hidden используется для скрытия навигации при активном js -->
         <nav class="main-nav main-nav--nojs">
-          <ul class="main-nav__list">
-            <li class="main-nav__item">
-              <a class="main-nav__link" href="catalog.html">Каталог товаров</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link" href="form.html">Вязание на заказ</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link" href="#">Поиск по сайту</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link" href="#">Корзина: пока пуста</a>
-            </li>
-          </ul>
           <button class="main-nav__toggle" type="button">
-            <span class="visually-hidden">Открыть меню</span>
+            <span class="visually-hidden">Открыть/закрыть меню</span>
           </button>
+          <div class="main-nav__wrapper">
+            <ul class="main-nav__list main-nav__list--principal">
+              <li class="main-nav__item">
+                <a class="main-nav__link main-nav__link--principal" href="catalog.html">Каталог товаров</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link main-nav__link--principal" href="form.html">Вязание на заказ</a>
+              </li>
+            </ul>
+            <ul class="main-nav__list main-nav__list--secondary">
+              <li class="main-nav__item">
+                <a class="main-nav__link main-nav__link--search" href="#">Поиск по сайту</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link main-nav__link--cart" href="#">Корзина: пока пуста</a>
+              </li>
+            </ul>
+            <ul class="main-nav__list main-nav__list--additional">
+              <li class="main-nav__item">
+                <a class="main-nav__link main-nav__link--additional" href="#">Новые поступления</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link main-nav__link--additional" href="#">Распродажа</a>
+              </li>
+            </ul>
+            <p class="main-nav__delivery main-nav__delivery--index">Бесплатная доставка по России</p>
+          </div>
         </nav>
-        <ul class="secondary-navigation">
-          <li class="secondary-navigation__item">
-            <a class="secondary-navigation__link" href="#">Новые поступления</a>
-          </li>
-          <li class="secondary-navigation__item">
-            <a class="secondary-navigation__link" href="#">Распродажа</a>
-          </li>
-        </ul>
-        <p class="main-header__delivery">Бесплатная доставка по России</p>
       </div>
     </header>
     <main class="main-index">
       <section class="promo">
-        <div class="container">
-          <h1 class="promo__title index-title">Милые штуки ручной работы для дома</h1>
-          <a class="promo__categoty-link promo__categoty-link--interior" href="#">Предметы интерьера</a>
-          <a class="promo__categoty-link promo__categoty-link--toys" href="#">Детские игрушки</a>
+        <div class="container promo-wrapper">
+          <h1 class="promo__title title">Милые штуки ручной работы&nbsp;для дома</h1>
+          <ul class="promo__categoty-list">
+            <li class="promo__categoty-item">
+              <a class="promo__categoty-link promo__categoty-link--interior" href="#">Предметы интерьера</a>
+            </li>
+            <li class="promo__categoty-item">
+              <a class="promo__categoty-link promo__categoty-link--toys" href="#">Детские игрушки</a>
+            </li>
+          </ul>
         </div>
       </section>
       <section class="top-product container">
         <h2 class="visually-hidden">Товар недели</h2>
-        <a class="top-product__categoty index-title" href="#">Вязаные корзинки</a>
+        <!-- надпись у зеленой этикетки псевдоэлементом можно поменять заменой значения aria-label у ссылки на товар -->
+        <a class="top-product__categoty index-title" href="#" aria-label="Товар недели">Вязаные корзинки</a>
         <div class="top-product__text-wrapper">
-          <p class="top-product__about">Экологически чистая пряжа, ручная работа. Доступны в шести расцветках и трёх размерах.</p>
+          <p class="top-product__about">Экологически чистая пряжа, ручная&nbsp;работа. Доступны в шести расцветках и трёх размерах.</p>
           <dl class="top-product__info">
             <dt class="top-product__specification top-product__text">Цвет:</dt>
             <dd class="top-product__value top-product__text">тиффани/серый</dd>
@@ -77,67 +89,78 @@
         </div>
         <a class="top-product__image-link" href="#">
           <picture>
+            <source type="image/webp" media="(min-width: 1150px)" srcset="img/products/top-product-desktop@1x.webp 1x, img/products/top-product-desktop@2x.webp 2x">
+            <source type="image/webp" media="(min-width: 768px)" srcset="img/products/top-product-tablet@1x.webp 1x, img/products/top-product-tablet@2x.webp 2x">
+            <source type="image/webp" srcset="img/products/top-product-mobile@1x.webp 1x, img/products/top-product-mobile@2x.webp 2x">
             <source media="(min-width: 1150px)" srcset="img/products/top-product-desktop@1x.jpg 1x, img/products/top-product-desktop@2x.jpg 2x">
             <source media="(min-width: 768px)" srcset="img/products/top-product-tablet@1x.jpg 1x, img/products/top-product-tablet@2x.jpg 2x">
-            <img class="top-product__image" src="img/products/top-product-mobile@1x.jpg" width="260" height="315" alt="Изображение вязаных корзинок." srcset="img/products/top-product-mobile@2x.jpg 2x">
+            <img class="top-product__image" src="img/products/top-product-mobile@1x.jpg" width="260" height="315" alt="Вязаные двухцветные корзинки." srcset="img/products/top-product-mobile@2x.jpg 2x">
           </picture>
         </a>
-        <p class="top-product__price">Цена: 990 руб.</p>
-        <button class="top-product__order-button button" href="#">Заказать</button>
+        <div class="top-product__shopping-wrapper">
+          <p class="top-product__price subtitle">Цена: 990 руб.</p>
+          <a class="top-product__order-button button" href="#">Заказать</a>
+        </div>
       </section>
       <section class="about-us container">
         <h2 class="about-us__title index-title">Коротко о нас:</h2>
         <ul class="about-us__list">
-          <li class="about-us__item">Экологически чистые материалы</li>
-          <li class="about-us__item">Скандинавский стиль по российской цене</li>
-          <li class="about-us__item">Увеличивает лайкина фотографиях</li>
-          <li class="about-us__item">Связано вручную с любовью и умилением</li>
-          <li class="about-us__item">Поддержка отечественного производителя</li>
-          <li class="about-us__item">Поставляется в подарочной упаковке</li>
+          <li class="about-us__item about-us__item--ecology subtitle">Экологически чистые материалы</li>
+          <li class="about-us__item about-us__item--money subtitle">Скандинавский стиль по&nbsp;российской цене</li>
+          <li class="about-us__item about-us__item--like subtitle">Увеличивает лайки на&nbsp;фотографиях</li>
+          <li class="about-us__item about-us__item--ball subtitle">Связано вручную с&nbsp;любовью и умилением</li>
+          <li class="about-us__item about-us__item--rocket subtitle">Поддержка отечественного производителя</li>
+          <li class="about-us__item about-us__item--gift subtitle">Поставляется в&nbsp;подарочной упаковке</li>
         </ul>
       </section>
       <section class="review container">
         <h2 class="review__title index-title">Отзывы</h2>
-        <a class="review__link button" href="#">Написать</a>
-        <div class="review__slider-control">
-          <button class="review__slider-button slider-prev" type="button">
-            <span class="visually-hidden">Предыдущий отзыв</span>
-          </button>
-          <button class="review__slider-button slider-next" type="button">
-            <span class="visually-hidden">Следующий отзыв</span>
-          </button>
-        </div>
         <ul class="review__slider-list">
           <li class="review__slider-item review__slider-item--active">
             <p class="review__slider-text">Я молодая мама, но всё равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке, и мои фотографии сразу стали более стильными, а также набирают больше лайков!</p>
-            <p class="review__slider-name">
+            <p class="review__slider-name subtitle">
               Анастасия Красильникова
               <span class="review__slider-nikname">@misssssiskras</span>
             </p>
           </li>
           <li class="review__slider-item">
             <p class="review__slider-text">Я молодая мама, но всё равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке, и мои фотографии сразу стали более стильными, а также набирают больше лайков!</p>
-            <p class="review__slider-name">
+            <p class="review__slider-name subtitle">
               Анастасия Красильникова+1
               <span class="review__slider-nikname">@misssssiskras+1</span>
             </p>
           </li>
           <li class="review__slider-item">
             <p class="review__slider-text">Я молодая мама, но всё равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке, и мои фотографии сразу стали более стильными, а также набирают больше лайков!</p>
-            <p class="review__slider-name">
+            <p class="review__slider-name subtitle">
               Анастасия Красильникова+2
               <span class="review__slider-nikname">@misssssiskras+2</span>
             </p>
           </li>
         </ul>
+        <div class="review__slider-control">
+          <button class="review__slider-button review__slider-button--prev" type="button">
+            <span class="visually-hidden">Предыдущий отзыв</span>
+          </button>
+          <button class="review__slider-button review__slider-button--next" type="button">
+            <span class="visually-hidden">Следующий отзыв</span>
+          </button>
+        </div>
+        <a class="review__link button" href="#">Написать</a>
       </section>
       <section class="contacts container">
         <h2 class="contacts__title index-title">Контакты</h2>
         <dl class="contacts__list">
-          <dt class="contacts__part">e-mail:</dt>
-          <dd class="contacts__details contacts__details--email">info@mimimishkashop.ru</dd>
-          <dt class="contacts__part">адрес:</dt>
-          <dd class="contacts__details">г. Санкт-Петербургул. Большая Конюшеннаяд. 19/8, офис 101</dd>
+          <div class="contacts__part">
+            <dt class="contacts__text">e-mail:</dt>
+            <dd class="contacts__text">
+              <a class="contacts__email" href="mailto:info@mimimishkashop.ru">info@mimimishkashop.ru</a>
+            </dd>
+          </div>
+          <div class="contacts__part">
+            <dt class="contacts__text">адрес:</dt>
+            <dd class="contacts__text">г. Санкт-Петербург ул.&nbsp;Большая Конюшенная д.&nbsp;19/8, офис 101</dd>
+          </div>
         </dl>
         <div class="contacts__map">
           <iframe class="contacts__google-map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3997.151539894556!2d30.322382210467968!3d59.93918135320076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sru!4v1688334562074!5m2!1ses!2sru" width="320" height="455" allowfullscreen title="Мы на карте"></iframe>
@@ -149,10 +172,11 @@
             </picture>
           </noscript>
         </div>
+        <a class="contacts__link button" href="#">Напишите нам</a>
       </section>
     </main>
     <footer class="main-footer">
-      <div class="container">
+      <div class="container main-footer-wrapper">
         <a class="main-footer__logo-link active-link" tabindex="-1" href="#" aria-label="Логотип магазина."></a>
         <ul class="main-footer__social-list">
           <li class="main-footer__social-item">
@@ -173,7 +197,7 @@
         </ul>
         <a class="main-footer__copyright-link" target="_blank" href="https://htmlacademy.ru/intensive/adaptive" >
           <span class="main-footer__copyright-text">Разработано</span>
-          <svg class="main-footer__copyright-icon" width="27" height="34" aria-label="в HTML academy">
+          <svg class="main-footer__copyright-icon" width="27" height="34" aria-label="в HTML academy.">
             <use xlink:href="img/svg/sprite.svg#html-academy"></use>
           </svg>
         </a>
@@ -181,27 +205,31 @@
     </footer>
     <div class="modal-container modal-container--close">
       <div class="modal-container__order">
+        <!-- Сброс выбранных размеров должен реализовываться на js, в данном проекте реализовано только открытие и закрытие окна для проверки его корректного отображения, без сброса -->
         <form class="modal-container__form" action="https://echo.htmlacademy.ru/" method="post">
-          <h2 class="modal-container__title">Добавить в корзину</h2>
+          <h2 class="modal-container__title">Добавить в&nbsp;корзину</h2>
           <fieldset class="modal-container__section">
             <legend class="modal-container__section-title">Выберите размер:</legend>
             <ul class="modal-container__list">
               <li class="modal-container__item">
                 <label class="modal-container__control">
                   <input class="visually-hidden modal-container__control-input" type="checkbox" name="size" value="S" checked>
-                  <span class="modal-container__control-mark">S</span>
+                  <span class="modal-container__control-mark"></span>
+                  <span class="modal-container__control-text">S</span>
                 </label>
               </li>
               <li class="modal-container__item">
                 <label class="modal-container__control">
                   <input class="visually-hidden modal-container__control-input" type="checkbox" name="size" value="M">
-                  <span class="modal-container__control-mark">M</span>
+                  <span class="modal-container__control-mark"></span>
+                  <span class="modal-container__control-text">M</span>
                 </label>
               </li>
               <li class="modal-container__item">
                 <label class="modal-container__control">
                   <input class="visually-hidden modal-container__control-input" type="checkbox" name="size" value="L">
-                  <span class="modal-container__control-mark">L</span>
+                  <span class="modal-container__control-mark"></span>
+                  <span class="modal-container__control-text">L</span>
                 </label>
               </li>
             </ul>

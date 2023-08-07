@@ -1,0 +1,39 @@
+.button {
+  @include pointer;
+  display: inline-flex;
+  padding: 14px 25px;
+  justify-content: center;
+  text-align: center;
+  font-family: $main-font;
+  background-color: $base-color;
+  color: $secondary-text-color;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid $secondary-text-color;
+
+  @media (min-width: $tablet-width) {
+    padding: 11px 25px;
+    font-size: 17px;
+    line-height: 26px;
+  }
+
+  &:hover {
+    background-color: $secondary-text-color;
+    color: $base-color;
+  }
+
+  &:active {
+    background-color: $secondary-text-color;
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  &:focus-visible {
+    background-color: $secondary-text-color;
+    color: $base-color;
+    opacity: 0.6;
+    outline: none;
+  }
+}
