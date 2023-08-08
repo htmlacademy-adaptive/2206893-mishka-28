@@ -3,11 +3,11 @@
   padding: 31px $mobile-side-indent 29px $mobile-side-indent;
 
   @media (min-width: $tablet-width) {
-    padding: 56px $tablet-side-indent 83px $tablet-side-indent;
+    padding: 56px $tablet-side-indent 84px $tablet-side-indent;
   }
 
   @media (min-width: $desktop-width) {
-    padding: 68px 225px 90px 225px;
+    padding: 68px 225px 91px 225px;
   }
 }
 
@@ -37,6 +37,7 @@
   position: relative;
   display: inline-flex;
   padding-top: 54px;
+  line-height: 20px;
 
   &::before {
     content: "";

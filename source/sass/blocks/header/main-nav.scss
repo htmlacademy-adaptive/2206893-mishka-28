@@ -109,7 +109,7 @@
       }
 
       .main-nav__item {
-        max-width: 265px;
+        max-width: 267px;
       }
     }
   }
@@ -122,6 +122,7 @@
       grid-row: 1 / 2;
       gap: 0 71px;
       max-width: 435px;
+      justify-content: start;
 
       .main-nav__item:nth-child(odd)::before {
         content: "";
@@ -259,6 +260,10 @@
     &--principal {
       padding: 32px 0;
       font-size: 17px;
+    }
+
+    &--cart {
+      padding-right: 3px;
     }
 
     &--additional {

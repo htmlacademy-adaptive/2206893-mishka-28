@@ -46,7 +46,7 @@
   &::before {
     content: attr(aria-label);
     position: absolute;
-    top: calc(100% + 3px);
+    top: calc(100% + 4px);
     left: 0;
     width: auto;
     height: auto;

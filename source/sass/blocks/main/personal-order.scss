@@ -22,6 +22,29 @@
 
   @media (min-width: $tablet-width) {
     padding: 36px $tablet-side-indent 87px $tablet-side-indent;
+    min-height: auto;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 100vw;
+      height: 24px;
+      background-image: url("../../img/svg/zigzag-fill-tablet.svg");
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 37px $tablet-side-indent 113px $tablet-side-indent;
+
+    &::after {
+      height: 34px;
+      background-image: url("../../img/svg/zigzag-fill--desktop.svg");
+      background-position: bottom center;
+    }
   }
 }
 
@@ -33,6 +56,10 @@
     padding: 54px 0 50px 0;
     flex-direction: row;
     align-items: flex-start;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 99px 0 50px 0;
   }
 }
 
@@ -93,6 +120,14 @@
 
     @media (min-width: $tablet-width) {
       margin-bottom: 0;
+
+      .personal-order__form-title {
+        padding-top: 18px;
+      }
+    }
+
+    @media (min-width: $desktop-width) {
+      padding-bottom: 48px;
     }
   }
 
@@ -105,10 +140,18 @@
 
     @media (min-width: $tablet-width) {
       margin-bottom: 0;
+
+      .personal-order__form-title {
+        padding-top: 16px;
+      }
     }
 
     @media (min-width: $desktop-width) {
       padding-right: 50px;
+
+      .personal-order__form-title {
+        padding-top: 19px;
+      }
     }
   }
 
@@ -121,6 +164,18 @@
 
     @media (min-width: $tablet-width) {
       margin-bottom: 0;
+
+      .personal-order__form-title {
+        padding-top: 17px;
+      }
+    }
+
+    @media (min-width: $desktop-width) {
+      gap: 12px;
+
+      .personal-order__form-title {
+        padding-top: 19px;
+      }
     }
   }
 
@@ -130,6 +185,16 @@
     @media (min-width: $tablet-width) {
       margin-bottom: 0;
       grid-template-columns: initial;
+
+      .personal-order__form-title {
+        padding-top: 16px;
+      }
+    }
+
+    @media (min-width: $desktop-width) {
+      .personal-order__form-title {
+        padding-top: 17px;
+      }
     }
   }
 
@@ -141,7 +206,7 @@
     }
 
     @media (min-width: $tablet-width) {
-      margin-bottom: 0;
+      margin-bottom: 3px;
       grid-template-columns: initial;
 
       .personal-order__label {
@@ -150,11 +215,14 @@
       }
 
       .personal-order__form-title {
-        padding: 15px 0;
+        padding: 19px 0;
       }
     }
 
     @media (min-width: $desktop-width) {
+      margin-bottom: 0;
+      padding-bottom: 49px;
+
       .personal-order__form-title {
         padding-left: 61px;
       }
@@ -168,8 +236,8 @@
 
 .personal-order__list {
   @include list-reset;
-  @include grid-style(13px, center);
-  margin-top: 31px;
+  @include grid-style(11px, center);
+  margin-top: 30px;
 
   &--colors {
     margin-top: 25px;
@@ -216,11 +284,18 @@
 
 .personal-order__control {
   position: relative;
-  padding: 10px 0 10px 60px;
+  padding: 5px 0 1px 60px;
+  min-height: 42px;
   display: inline-flex;
+  align-items: center;
+
+  &--colors {
+    padding: 1px 0 1px 60px;
+    min-height: 38px;
+  }
 
   @media (min-width: $tablet-width) {
-    padding: 17px 0 17px 82px;
+    padding: 17px 0 17px 80px;
   }
 }
 
@@ -239,7 +314,6 @@
 .personal-order__control-mark {
   @include pointer;
   position: absolute;
-  top: 0;
   left: 0;
   display: inline-flex;
   justify-content: center;
@@ -248,8 +322,9 @@
 }
 
 .personal-order__control-input[type="checkbox"] + .personal-order__control-mark {
-  width: 40px;
-  height: 40px;
+  top: -1px;
+  width: 38px;
+  height: 38px;
 
   @media (min-width: $tablet-width) {
     width: 52px;
@@ -277,14 +352,20 @@
 }
 
 .personal-order__control-input[type="radio"] + .personal-order__control-mark {
-  width: 38px;
-  height: 38px;
+  top: 1px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 
   @media (min-width: $tablet-width) {
     width: 49px;
     height: 49px;
     top: 1px;
+    left: 3px;
+  }
+
+  @media (min-width: $desktop-width) {
+    left: 1px;
   }
 }
 
@@ -390,13 +471,6 @@
     }
   }
 
-  @media (min-width: $tablet-width) {
-    &--phone,
-    &--email {
-      padding: 15px 0;
-    }
-  }
-
   @media (min-width: $desktop-width) {
     padding-left: 61px;
     padding-top: 19px;
@@ -418,7 +492,7 @@
 
 .personal-order__phone-icon {
   position: absolute;
-  top: 11px;
+  top: 31px;
   right: 6px;
   width: 25px;
   height: 24px;
@@ -427,6 +501,7 @@
   mask-image: url("../../img/svg/sprite.svg#phone");
 
   @media (min-width: $tablet-width) {
+    top: 11px;
     right: 26px;
   }
 
@@ -437,7 +512,7 @@
 
 .personal-order__email-icon {
   position: absolute;
-  top: 16px;
+  top: 36px;
   right: 3px;
   width: 32px;
   height: 22px;
@@ -446,6 +521,7 @@
   mask-image: url("../../img/svg/sprite.svg#mail");
 
   @media (min-width: $tablet-width) {
+    top: 16px;
     right: 22px;
   }
 
@@ -466,7 +542,8 @@
   border-bottom: 2px solid $secondary-text-color;
 
   &::placeholder {
-    opacity: 0.3;
+    opacity: 1;
+    color: rgba(0, 0, 0, 0.3);
   }
 
   &:hover {
@@ -562,8 +639,11 @@
 }
 
 .personal-order__submit-button {
+  font-size: 17px;
+
   @media (min-width: $tablet-width) {
     margin: 0 auto 0 $tablet-side-indent;
+    padding: 11px 30px;
   }
 
   @media (min-width: $desktop-width) {

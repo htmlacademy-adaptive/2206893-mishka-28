@@ -8,7 +8,7 @@
   background-size: 320px 6px;
 
   @media (min-width: $tablet-width) {
-    padding: 83px $tablet-side-indent 85px $tablet-side-indent;
+    padding: 79px $tablet-side-indent 85px $tablet-side-indent;
     grid-template-columns: 1fr auto;
     background-image: url("../../img/svg/zigzag-line-tablet.svg"), url("../../img/background/review.png");
     background-position: center bottom, top left;
@@ -28,10 +28,12 @@
   margin-bottom: 14px;
 
   @media (min-width: $tablet-width) {
-    margin-bottom: 38px;
+    padding-top: 3px;
+    margin-bottom: 39px;
   }
 
   @media (min-width: $desktop-width) {
+    padding-top: 0;
     margin-bottom: 35px;
   }
 }
