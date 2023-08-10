@@ -50,5 +50,9 @@
   "type": "module",
   "volta": {
     "node": "16.20.1"
+  },
+  "dependencies": {
+    "gulp-htmlmin": "^5.0.1",
+    "svgstore": "^3.0.1"
   }
 }
