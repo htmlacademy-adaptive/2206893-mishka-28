@@ -37,9 +37,9 @@ const html = () => {
 
 // Scripts
 const scripts = () => {
-  return gulp.src('source/js/*.js')
-  .pipe(terser())
-  .pipe(gulp.dest('build/js'));
+  return gulp.src('source/js/script.js')
+  .pipe(gulp.dest('build/js'))
+  .pipe(browser.stream());
 }
 
 
@@ -100,7 +100,7 @@ const clean = () => {
 const server = (done) => {
   browser.init({
     server: {
-      baseDir: 'sobuildurce'
+      baseDir: 'build'
     },
     cors: true,
     notify: false,
@@ -134,7 +134,8 @@ export const build = gulp.series(
   svg,
   sprite,
   createWebp
-  ));
+  ),
+  );
 
 export default gulp.series(
   clean,
