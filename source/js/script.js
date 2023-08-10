@@ -10,7 +10,7 @@ const initOpenMenu = () => {
   });
 };
 
-const initChangeOrder= () => {
+const initChangeOrder = () => {
   const logoLink = document.querySelector('.main-header__logo-link');
   const principalMenuLink = document.querySelectorAll('.main-nav__link--principal');
   const searchMenuLink = document.querySelector('.main-nav__link--search');
@@ -38,6 +38,36 @@ const initChangeOrder= () => {
           principalMenuLink[i].setAttribute('tabindex', '1')
         }
       }
+    }
+  }
+};
+
+const advantagesListOrder  = () => {
+  const items = document.querySelectorAll('.about-us__item');
+  var items_count = 0;
+
+  for (var i = 0; i < items.length; i++) {
+    items_count++;
+  }
+
+  var k = items_count;
+
+  if (items_count % 2 == 0) {
+    for (var j = 0; j < items_count / 2; j++) {
+      items[j].classList.add('about-us__item--first-column');
+      k--;
+      items[k].classList.remove('about-us__item--first-column');
+    }
+  }
+
+  else {
+    for (var j = 0; j < (items_count / 2 - items_count % 2 + 1); j++) {
+      items[j].classList.add('about-us__item--first-column');
+    }
+
+    for (var j = 0; j < (items_count / 2 - items_count % 2); j++) {
+      k--;
+      items[k].classList.remove('about-us__item--first-column');
     }
   }
 };
@@ -184,6 +214,7 @@ const initModalCatalog = () => {
 
 initOpenMenu();
 initChangeOrder();
+advantagesListOrder();
 initMap();
 initSlider();
 initChangeMap();

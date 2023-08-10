@@ -474,6 +474,7 @@
   @media (min-width: $desktop-width) {
     padding-left: 61px;
     padding-top: 19px;
+    letter-spacing: -0.8px;
   }
 }
 
@@ -492,7 +493,7 @@
 
 .personal-order__phone-icon {
   position: absolute;
-  top: 31px;
+  bottom: 17px;
   right: 6px;
   width: 25px;
   height: 24px;
@@ -501,7 +502,6 @@
   mask-image: url("../../img/svg/sprite.svg#phone");
 
   @media (min-width: $tablet-width) {
-    top: 11px;
     right: 26px;
   }
 
@@ -512,7 +512,7 @@
 
 .personal-order__email-icon {
   position: absolute;
-  top: 36px;
+  bottom: 15px;
   right: 3px;
   width: 32px;
   height: 22px;
@@ -521,7 +521,6 @@
   mask-image: url("../../img/svg/sprite.svg#mail");
 
   @media (min-width: $tablet-width) {
-    top: 16px;
     right: 22px;
   }
 
@@ -627,10 +626,11 @@
   margin-bottom: 30px;
 
   @media (min-width: $tablet-width) {
+    margin: 10px $tablet-side-indent 0 0;
     font-size: 17px;
     line-height: 30px;
+    max-width: 330px;
     order: 1;
-    margin: 10px $tablet-side-indent 0 0;
   }
 
   @media (min-width: $desktop-width) {
@@ -644,6 +644,7 @@
   @media (min-width: $tablet-width) {
     margin: 0 auto 0 $tablet-side-indent;
     padding: 11px 30px;
+    max-width: 330px;
   }
 
   @media (min-width: $desktop-width) {

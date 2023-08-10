@@ -167,7 +167,8 @@
   width: 100%;
 
   @media (min-width: $tablet-width) {
-    height: 457px;
+    min-height: 457px;
+    height: 100%;
   }
 }
 
