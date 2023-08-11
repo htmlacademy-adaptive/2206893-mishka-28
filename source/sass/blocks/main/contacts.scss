@@ -40,7 +40,7 @@
 
   @media (min-width: $desktop-width) {
     padding: 79px 20px 0 175px;
-    margin-bottom: 28px;
+    margin-bottom: 35px;
   }
 }
 
@@ -107,6 +107,14 @@
     opacity: 0.6;
     outline: none;
   }
+
+  @media (min-width: $tablet-width) {
+    text-underline-offset: 8px;
+  }
+
+  @media (min-width: $desktop-width) {
+    text-underline-offset: 12px;
+  }
 }
 
 .contacts__map {
@@ -159,7 +167,8 @@
   width: 100%;
 
   @media (min-width: $tablet-width) {
-    height: 457px;
+    min-height: 457px;
+    height: 100%;
   }
 }
 

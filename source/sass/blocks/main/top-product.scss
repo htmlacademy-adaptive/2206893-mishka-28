@@ -46,7 +46,7 @@
   &::before {
     content: attr(aria-label);
     position: absolute;
-    top: calc(100% + 3px);
+    top: calc(100% + 4px);
     left: 0;
     width: auto;
     height: auto;
@@ -62,7 +62,9 @@
       top: 6px;
       left: auto;
       right: 13px;
-      width: 100px;
+      width: min-content;
+      min-width: 100px;
+      max-width: 130px;
       line-height: 17px;
       text-align: center;
     }
@@ -78,6 +80,7 @@
     grid-column: 1 / -1;
     grid-row: 1 / 2;
     margin-bottom: 37px;
+    padding-right: 140px;
   }
 
   @media (min-width: $desktop-width) {

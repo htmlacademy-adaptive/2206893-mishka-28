@@ -22,6 +22,11 @@
 
   @media (min-width: $tablet-width) {
     padding: 36px $mobile-side-indent 87px $mobile-side-indent;
+    min-height: auto;
+
+    &::before {
+      height: calc(100% - 1px);
+    }
 
     &::after {
       content: "";
@@ -41,7 +46,7 @@
 
     &::after {
       height: 34px;
-      background-image: url("../../img/svg/zigzag-fill-desktop.svg");
+      background-image: url("../../img/svg/zigzag-fill--desktop.svg");
       background-position: bottom center;
     }
   }
@@ -137,7 +142,7 @@
   }
 
   @media (min-width: $desktop-width) {
-    padding: 26px 26px 24px 26px;
+    padding: 26px 32px 24px 26px;
     border: 1px solid $border-color;
   }
 }
@@ -177,11 +182,11 @@
     background-color: $border-color;
 
     @media (min-width: $tablet-width) {
-      top: calc(100% + 20px);
+      top: calc(100% + 16px);
     }
 
     @media (min-width: $desktop-width) {
-      top: calc(100% + 14px);
+      top: calc(100% + 13px);
     }
   }
 }
@@ -215,6 +220,16 @@
     background-color: $base-text-color;
     mask-image: url("../../img/svg/sprite.svg#cart");
     mask-size: 20px 19px;
+
+    @media (min-width: $tablet-width) {
+      width: 21px;
+      height: 18px;
+      mask-size: 21px 18px;
+    }
+
+    @media (min-width: $desktop-width) {
+      right: 0;
+    }
   }
 
   &:hover::before {

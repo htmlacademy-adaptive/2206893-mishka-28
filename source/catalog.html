@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>HTML Academy: Мишка</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <link rel="icon" href="favicon.ico"><!-- 32×32 -->
     <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="img/favicons/apple.png"><!-- 180×180 -->
@@ -65,6 +65,9 @@
           <li class="catalog__item">
             <a class="catalog__image-link" href="#">
               <picture>
+                <source type="image/webp" media="(min-width: 1150px)" srcset="img/products/rabbit-desktop@1x.webp 1x, img/products/rabbit-desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 768px)" srcset="img/products/rabbit-tablet@1x.webp 1x, img/products/rabbit-tablet@2x.webp 2x">
+                <source type="image/webp" srcset="img/products/rabbit-mobile@1x.webp 1x, img/products/rabbit-mobile@2x.webp 2x">
                 <source media="(min-width: 1150px)" srcset="img/products/rabbit-desktop@1x.jpg 1x, img/products/rabbit-desktop@2x.jpg 2x">
                 <source media="(min-width: 768px)" srcset="img/products/rabbit-tablet@1x.jpg 1x, img/products/rabbit-tablet@2x.jpg 2x">
                 <img class="catalog__image" src="img/products/rabbit-mobile@1x.jpg" width="260" height="195" alt="Изображение зайчика-попрыгайчика." srcset="img/products/rabbit-mobile@2x.jpg 2x">
@@ -82,6 +85,9 @@
           <li class="catalog__item">
             <a class="catalog__image-link" href="#">
               <picture>
+                <source type="image/webp" media="(min-width: 1150px)" srcset="img/products/laundry-basket-desktop@1x.webp 1x, img/products/laundry-basket-desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 768px)" srcset="img/products/laundry-basket-tablet@1x.webp 1x, img/products/laundry-basket-tablet@2x.webp 2x">
+                <source type="image/webp" srcset="img/products/laundry-basket-mobile@1x.webp 1x, img/products/laundry-basket-mobile@2x.webp 2x">
                 <source media="(min-width: 1150px)" srcset="img/products/laundry-basket-desktop@1x.jpg 1x, img/products/laundry-basket-desktop@2x.jpg 2x">
                 <source media="(min-width: 768px)" srcset="img/products/laundry-basket-tablet@1x.jpg 1x, img/products/laundry-basket-tablet@2x.jpg 2x">
                 <img class="catalog__image" src="img/products/laundry-basket-mobile@1x.jpg" width="260" height="195" alt="Изображение корзинки для белья." srcset="img/products/laundry-basket-mobile@2x.jpg 2x">
@@ -99,6 +105,9 @@
           <li class="catalog__item">
             <a class="catalog__image-link" href="#">
               <picture>
+                <source type="image/webp" media="(min-width: 1150px)" srcset="img/products/toys-basket-desktop@1x.webp 1x, img/products/toys-basket-desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 768px)" srcset="img/products/toys-basket-tablet@1x.webp 1x, img/products/toys-basket-tablet@2x.webp 2x">
+                <source type="image/webp" srcset="img/products/toys-basket-mobile@1x.webp 1x, img/products/toys-basket-mobile@2x.webp 2x">
                 <source media="(min-width: 1150px)" srcset="img/products/toys-basket-desktop@1x.jpg 1x, img/products/toys-basket-desktop@2x.jpg 2x">
                 <source media="(min-width: 768px)" srcset="img/products/toys-basket-tablet@1x.jpg 1x, img/products/toys-basket-tablet@2x.jpg 2x">
                 <img class="catalog__image" src="img/products/toys-basket-mobile@1x.jpg" width="260" height="195" alt="Изображение большой корзинки для игрушек." srcset="img/products/toys-basket-mobile@2x.jpg 2x">
@@ -118,7 +127,7 @@
       <section class="video container">
         <div class="video__wrapper">
           <h2 class="video__title subtitle">Процесс производства</h2>
-          <a class="video__image-link" href="#">
+          <a class="video__image-link" href="#" aria-label="Видео с процессом производства товаров для магазина Мишка">
             <picture>
               <source type="image/webp" media="(min-width: 1150px)" srcset="img/products/video-desktop@1x.webp 1x, img/products/video-desktop@2x.webp 2x">
               <source type="image/webp" media="(min-width: 768px)" srcset="img/products/video-tablet@1x.webp 1x, img/products/video-tablet@2x.webp 2x">
@@ -137,7 +146,9 @@
     </main>
     <footer class="main-footer">
       <div class="container main-footer-wrapper">
-        <a class="main-footer__logo-link" href="index.html" aria-label="Перейти на главную страницу."></a>
+        <div>
+          <a class="main-footer__logo-link" href="index.html" aria-label="Перейти на главную страницу."></a>
+        </div>
         <ul class="main-footer__social-list">
           <li class="main-footer__social-item">
             <a class="main-footer__social-link main-footer__social-link--vkontakte" target="_blank" href="https://vk.com/htmlacademy">

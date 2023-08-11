@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>HTML Academy: Мишка</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <link rel="icon" href="favicon.ico"><!-- 32×32 -->
     <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="img/favicons/apple.png"><!-- 180×180 -->
@@ -86,42 +86,42 @@
             <h2 class="personal-order__form-title title-form">Цвет</h2>
             <ul class="personal-order__list personal-order__list--colors">
               <li class="personal-order__item">
-                <label class="personal-order__control">
+                <label class="personal-order__control personal-order__control--colors">
                   <input class="visually-hidden personal-order__control-input" type="checkbox" name="colors" value="white" checked>
                   <span class="personal-order__control-mark"></span>
                   <span class="personal-order__control-text review-text">Белый</span>
                 </label>
               </li>
               <li class="personal-order__item">
-                <label class="personal-order__control">
+                <label class="personal-order__control personal-order__control--colors">
                   <input class="visually-hidden personal-order__control-input" type="checkbox" name="colors" value="grey" checked>
                   <span class="personal-order__control-mark"></span>
                   <span class="personal-order__control-text review-text">Серый</span>
                 </label>
               </li>
               <li class="personal-order__item">
-                <label class="personal-order__control">
+                <label class="personal-order__control personal-order__control--colors">
                   <input class="visually-hidden personal-order__control-input" type="checkbox" name="colors" value="tiffani">
                   <span class="personal-order__control-mark"></span>
                   <span class="personal-order__control-text review-text">Тиффани</span>
                 </label>
               </li>
               <li class="personal-order__item">
-                <label class="personal-order__control">
+                <label class="personal-order__control personal-order__control--colors">
                   <input class="visually-hidden personal-order__control-input" type="checkbox" name="colors" value="black">
                   <span class="personal-order__control-mark"></span>
                   <span class="personal-order__control-text review-text">Черный</span>
                 </label>
               </li>
               <li class="personal-order__item">
-                <label class="personal-order__control">
+                <label class="personal-order__control personal-order__control--colors">
                   <input class="visually-hidden personal-order__control-input" type="checkbox" name="colors" value="pink">
                   <span class="personal-order__control-mark"></span>
                   <span class="personal-order__control-text review-text">Розовый</span>
                 </label>
               </li>
               <li class="personal-order__item">
-                <label class="personal-order__control">
+                <label class="personal-order__control personal-order__control--colors">
                   <input class="visually-hidden personal-order__control-input" type="checkbox" name="colors" value="orange">
                   <span class="personal-order__control-mark"></span>
                   <span class="personal-order__control-text review-text">Оранжевый</span>
@@ -130,7 +130,7 @@
             </ul>
           </fieldset>
           <div class="personal-order__section personal-order__section--representation">
-            <h2 class="personal-order__form-title title-form">ФИО:</h2>
+            <h2 class="personal-order__form-title title-form">ФИО</h2>
             <ul class="personal-order__list personal-order__list--representation">
               <li class="personal-order__item">
                 <label class="personal-order__label">
@@ -184,7 +184,9 @@
     </main>
     <footer class="main-footer">
       <div class="container main-footer-wrapper">
-        <a class="main-footer__logo-link" href="index.html" aria-label="Перейти на главную страницу."></a>
+        <div>
+          <a class="main-footer__logo-link" href="index.html" aria-label="Перейти на главную страницу."></a>
+        </div>
         <ul class="main-footer__social-list">
           <li class="main-footer__social-item">
             <a class="main-footer__social-link main-footer__social-link--vkontakte" target="_blank" href="https://vk.com/htmlacademy">

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>HTML Academy: Мишка</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <link rel="icon" href="favicon.ico"><!-- 32×32 -->
     <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="img/favicons/apple.png"><!-- 180×180 -->
@@ -104,20 +104,21 @@
       </section>
       <section class="about-us container">
         <h2 class="about-us__title index-title">Коротко о нас:</h2>
+        <!-- Порядок отображения согласно макету по классу  about-us__item--first-column прописан для списка 6 элементов, как представлено в макете. Разделение на 2 столбца по той же логике большего/меньшего числа реализовано только на js -->
         <ul class="about-us__list">
-          <li class="about-us__item about-us__item--ecology subtitle">Экологически чистые материалы</li>
-          <li class="about-us__item about-us__item--money subtitle">Скандинавский стиль по&nbsp;российской цене</li>
-          <li class="about-us__item about-us__item--like subtitle">Увеличивает лайки на&nbsp;фотографиях</li>
-          <li class="about-us__item about-us__item--ball subtitle">Связано вручную с&nbsp;любовью и умилением</li>
+          <li class="about-us__item about-us__item--ecology subtitle">Экологически чистые&nbsp;материалы</li>
+          <li class="about-us__item about-us__item--money subtitle about-us__item--first-column">Скандинавский стиль по&nbsp;российской цене</li>
+          <li class="about-us__item about-us__item--like subtitle about-us__item--first-column">Увеличивает лайки на&nbsp;фотографиях</li>
+          <li class="about-us__item about-us__item--ball subtitle">Связано вручную с&nbsp;любовью&nbsp;и умилением</li>
           <li class="about-us__item about-us__item--rocket subtitle">Поддержка отечественного производителя</li>
-          <li class="about-us__item about-us__item--gift subtitle">Поставляется в&nbsp;подарочной упаковке</li>
+          <li class="about-us__item about-us__item--gift subtitle">Поставляется в&nbsp;подарочной&nbsp;упаковке</li>
         </ul>
       </section>
       <section class="review container">
         <h2 class="review__title index-title">Отзывы</h2>
         <ul class="review__slider-list">
           <li class="review__slider-item review__slider-item--active">
-            <p class="review__slider-text">Я молодая мама, но всё равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке, и мои фотографии сразу стали более стильными, а также набирают больше лайков!</p>
+            <p class="review__slider-text">Я молодая мама, но всё равно фотографии не набирали и близко такого количества лайков, как у&nbsp;популярных инстамамочек. В&nbsp;отчаянии, я накупила аксессуаров и игрушек в Мишке, и мои фотографии сразу стали более стильными, а также набирают больше лайков!</p>
             <p class="review__slider-name subtitle">
               Анастасия Красильникова
               <span class="review__slider-nikname">@misssssiskras</span>
@@ -166,6 +167,9 @@
           <iframe class="contacts__google-map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3997.151539894556!2d30.322382210467968!3d59.93918135320076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sru!4v1688334562074!5m2!1ses!2sru" width="320" height="455" allowfullscreen title="Мы на карте"></iframe>
           <noscript>
             <picture>
+              <source type="image/webp" media="(min-width: 1150px)" srcset="img/map-desktop@1x.webp 1x, img/map-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 768px)" srcset="img/map-tablet@1x.webp 1x, img/map-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/map-mobile@1x.webp 1x, img/map-mobile@2x.webp 2x">
               <source media="(min-width: 1150px)" srcset="img/map-desktop@1x.png 1x, img/map-desktop@2x.png 2x">
               <source media="(min-width: 768px)" srcset="img/map-tablet@1x.png 1x, img/map-tablet@2x.png 2x">
               <img class="contacts__map-image" src="img/map-mobile@1x.png" width="320" height="455" alt="Мы на карте." srcset="img/map-mobile@2x.png 2x">
@@ -177,7 +181,9 @@
     </main>
     <footer class="main-footer">
       <div class="container main-footer-wrapper">
-        <a class="main-footer__logo-link active-link" tabindex="-1" href="#" aria-label="Логотип магазина."></a>
+        <div>
+          <a class="main-footer__logo-link active-link" tabindex="-1" href="#" aria-label="Логотип магазина."></a>
+        </div>
         <ul class="main-footer__social-list">
           <li class="main-footer__social-item">
             <a class="main-footer__social-link main-footer__social-link--vkontakte" target="_blank" href="https://vk.com/htmlacademy">
