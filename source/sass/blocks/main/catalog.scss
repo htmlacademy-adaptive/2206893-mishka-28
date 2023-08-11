@@ -24,6 +24,10 @@
     padding: 36px $mobile-side-indent 87px $mobile-side-indent;
     min-height: auto;
 
+    &::before {
+      height: calc(100% - 1px);
+    }
+
     &::after {
       content: "";
       position: absolute;
