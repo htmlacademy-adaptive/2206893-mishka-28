@@ -133,7 +133,6 @@
 
   &:hover {
     transform: translateY(-5px);
-    transition: 0.3s;
 
     &::before {
       opacity: 0.7;
@@ -151,7 +150,6 @@
 
   &:active {
     transform: translateY(-5px);
-    transition: 0.3s;
 
     &::before {
       opacity: 0.3;
