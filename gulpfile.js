@@ -9,7 +9,7 @@ import htmlmin from 'gulp-htmlmin';
 import terser from 'gulp-terser';
 import squoosh from 'gulp-libsquoosh';
 import svgo from 'gulp-svgmin';
-import svgstore from 'gulp-svgstore';
+import { stacksvg } from "gulp-stacksvg"
 import del from 'del';
 import browser from 'browser-sync';
 
@@ -38,6 +38,7 @@ const html = () => {
 // Scripts
 const scripts = () => {
   return gulp.src('source/js/script.js')
+  .pipe(terser())
   .pipe(gulp.dest('build/js'))
   .pipe(browser.stream());
 }
@@ -71,13 +72,9 @@ const svg = () => {
   .pipe(gulp.dest('build/img'));
 }
 
-const sprite = () => {
-  return gulp.src('source/img/svg/*.svg')
-  .pipe(svgo())
-  .pipe(svgstore({
-    inlineSvg: true
-  }))
-  .pipe(rename('sprite.svg'))
+const stack = () => {
+  return gulp.src('source/img/icons/*.svg')
+  .pipe(stacksvg({ output: `sprite` }))
   .pipe(gulp.dest('build/img/svg'));
 }
 
@@ -132,7 +129,7 @@ export const build = gulp.series(
   html,
   scripts,
   svg,
-  sprite,
+  stack,
   createWebp
   ),
   );
@@ -146,7 +143,7 @@ export default gulp.series(
     html,
     scripts,
     svg,
-    sprite,
+    stack,
     createWebp
   ),
   gulp.series(

@@ -2,7 +2,7 @@
   background-color: $secondary-color;
 }
 
-.main-footer-wrapper {
+.main-footer__wrapper {
   @include grid-style(initial, initial);
   padding: 25px $mobile-side-indent 22px $mobile-side-indent;
 

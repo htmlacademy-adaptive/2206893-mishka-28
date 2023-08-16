@@ -10,17 +10,38 @@
   @media (min-width: $tablet-width) {
     padding: 79px $tablet-side-indent 85px $tablet-side-indent;
     grid-template-columns: 1fr auto;
-    background-image: url("../../img/svg/zigzag-line-tablet.svg"), url("../../img/background/review.png");
-    background-position: center bottom, top left;
-    background-repeat: repeat-x, no-repeat;
-    background-size: 768px 17px, auto calc(100% - 85px);
+    background-image: url("../../img/background/review@1x.jpg");
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: auto calc(100% - 85px);
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../../img/background/review@2x.jpg");
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 100%;
+      height: 17px;
+      background-image: url("../../img/svg/zigzag-line-tablet.svg");
+      background-repeat: repeat-x;
+      transform: translateX(-50%);
+    }
   }
 
   @media (min-width: $desktop-width) {
     padding: 78px $tablet-side-indent 90px 225px;
-    background-image: url("../../img/svg/zigzag-line-desktop.svg"), url("../../img/background/review.png");
-    background-position: center bottom, top left $tablet-side-indent;
-    background-size: 1050px 23px, auto calc(100% - 90px);
+    background-position: top left $tablet-side-indent;
+    background-size: auto calc(100% - 90px);
+
+    &::before {
+      width: 1050px;
+      height: 23px;
+      background-image: url("../../img/svg/zigzag-line-desktop.svg");
+    }
   }
 }
 
@@ -45,7 +66,6 @@
   @media (min-width: $tablet-width) {
     grid-column: 1 / -1;
     margin-bottom: 0;
-    padding-right: 180px;
   }
 }
 
@@ -89,6 +109,7 @@
 
   @media (min-width: $tablet-width) {
     font-size: 18px;
+    padding-right: 180px;
   }
 
   @media (min-width: $desktop-width) {
@@ -137,6 +158,7 @@
   @include indent-reset;
   @include pointer;
   @include basic-interactive;
+  @include disabled;
   position: relative;
   background-color: $transparent;
   height: 50px;
