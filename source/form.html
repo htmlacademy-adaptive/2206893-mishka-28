@@ -23,7 +23,7 @@
             <img class="main-header__icon" src="img/svg/logo-header-mobile.svg" width="86" height="29" alt="Логотип магазина.">
           </picture>
         </a>
-        <!-- Класс main-nav--nojs стоит при отключенном js и при включении js он автоматически удаляется, а класс main-nav--hidden используется для скрытия навигации при активном js -->
+        <!-- Класс main-nav--nojs стоит при отключенном js и при включении js он автоматически удаляется и добавляется класс main-nav--hidden, который используется для скрытия навигации при активном js -->
         <nav class="main-nav main-nav--nojs">
           <button class="main-nav__toggle" type="button">
             <span class="visually-hidden">Открыть/закрыть меню</span>
@@ -183,7 +183,7 @@
       </section>
     </main>
     <footer class="main-footer">
-      <div class="container main-footer-wrapper">
+      <div class="container main-footer__wrapper">
         <div>
           <a class="main-footer__logo-link" href="index.html" aria-label="Перейти на главную страницу."></a>
         </div>

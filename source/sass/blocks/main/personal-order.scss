@@ -534,11 +534,12 @@
 }
 
 .personal-order__input {
-  padding: 16px 10px 16px 0;
+  @include disabled;
+  padding: 12px 10px 12px 0;
   font-family: $main-font;
   font-weight: 400;
   font-size: 17px;
-  line-height: 18px;
+  line-height: 26px;
   color: $base-text-color;
   background-color: $transparent;
   border: none;
@@ -578,23 +579,28 @@
   }
 
   &:focus-visible {
-    opacity: 0.3;
     border-color: $interactive-color;
     outline: none;
-
-    &::placeholder {
-      opacity: 1;
-    }
   }
 
   &:focus-visible + .personal-order__phone-icon {
-    opacity: 0.5;
+    opacity: 1;
     background-color: $interactive-color;
   }
 
   &:focus-visible + .personal-order__email-icon {
-    opacity: 0.5;
+    opacity: 1;
     background-color: $interactive-color;
+  }
+
+  &:disabled {
+    border-color: $secondary-text-color;
+  }
+
+  &:disabled + .personal-order__phone-icon,
+  &:disabled + .personal-order__email-icon {
+    background-color: $base-text-color;
+    opacity: 0.3;
   }
 
   &--phone,
@@ -608,6 +614,7 @@
     padding: 15px;
     height: 142px;
     resize: none;
+    line-height: 18px;
     border: 2px solid $secondary-text-color;
   }
 
@@ -615,11 +622,8 @@
     margin-top: 0;
     width: 100%;
     min-width: 350px;
-    padding-top: 12px;
-    padding-bottom: 12px;
     padding-left: 17px;
     font-size: 19px;
-    line-height: 26px;
   }
 }
 
@@ -643,6 +647,7 @@
 }
 
 .personal-order__submit-button {
+  @include disabled;
   font-size: 17px;
 
   @media (min-width: $tablet-width) {

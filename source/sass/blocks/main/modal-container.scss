@@ -169,6 +169,7 @@
 }
 
 .modal-container__submit-button {
+  @include disabled;
   padding: 16px 25px;
   width: 100%;
   border: none;
